@@ -1,8 +1,11 @@
 import {
     ArrowUpRight,
+    Accessibility,
     BookOpen,
-    HeartPulse,
-    Laptop,
+    BriefcaseBusiness,
+    HeartHandshake,
+    House,
+    Utensils,
 } from "lucide-react";
 
 import Container from "../ui/Container";
@@ -12,33 +15,63 @@ function OurWork() {
     const programs = [
         {
             id: "01",
-            label: "Program 01",
-            title: "Free Education",
+            label: "Area 01",
+            title: "Housing Support",
             description:
-                "We help children who cannot afford school with free learning support, books, tuition, and basic educational resources.",
-            message: "Give a child a chance to learn",
-            icon: BookOpen,
+                "We believe every person deserves a safe place to live with dignity. We support families facing difficult housing conditions and help where possible.",
+            message: "A safe home. A dignified life.",
+            icon: House,
             color: "primary",
         },
         {
             id: "02",
-            label: "Program 02",
-            title: "Free Computer Skills",
+            label: "Area 02",
+            title: "Free Education",
             description:
-                "We introduce children to basic computer skills and digital knowledge that can help them build confidence for the future.",
-            message: "Build skills for tomorrow",
-            icon: Laptop,
+                "We work to make education accessible for poor children through free learning opportunities, school support, clothing, and useful books.",
+            message: "Give a child a chance to learn.",
+            icon: BookOpen,
             color: "accent",
         },
         {
             id: "03",
-            label: "Program 03",
-            title: "Health & Food Support",
+            label: "Area 03",
+            title: "Food, Clothing & Medicine",
             description:
-                "We support children with basic health awareness and food assistance to help them grow in a safer and healthier environment.",
-            message: "Support a healthier childhood",
-            icon: HeartPulse,
+                "We aim to ensure that children and families in need receive essential food, clothing, medicine, and compassionate support.",
+            message: "No one should be left without basic care.",
+            icon: Utensils,
             color: "primary",
+        },
+        {
+            id: "04",
+            label: "Area 04",
+            title: "Livelihood & Employment",
+            description:
+                "We support people who want to build a better future by encouraging skills, livelihood opportunities, and pathways toward employment.",
+            message: "Skills today. Opportunities tomorrow.",
+            icon: BriefcaseBusiness,
+            color: "accent",
+        },
+        {
+            id: "05",
+            label: "Area 05",
+            title: "Disability Support",
+            description:
+                "We stand with people living with physical or mental disabilities and aim to support them with care, respect, and dignity.",
+            message: "Standing together with dignity.",
+            icon: Accessibility,
+            color: "primary",
+        },
+        {
+            id: "06",
+            label: "Area 06",
+            title: "Marriage Support",
+            description:
+                "We help families facing financial difficulties by supporting poor daughters and families with marriage-related assistance.",
+            message: "Supporting families with compassion.",
+            icon: HeartHandshake,
+            color: "accent",
         },
     ];
 
@@ -49,8 +82,8 @@ function OurWork() {
                 relative
                 overflow-hidden
                 bg-slate-50
-                py-20
-                sm:py-24
+                py-16
+                sm:py-20
                 lg:py-28
             "
         >
@@ -65,11 +98,14 @@ function OurWork() {
                     absolute
                     -right-40
                     top-10
-                    h-80
-                    w-80
+                    h-64
+                    w-64
                     rounded-full
                     bg-primary-100/50
                     blur-3xl
+
+                    sm:h-80
+                    sm:w-80
                 "
             />
 
@@ -80,11 +116,14 @@ function OurWork() {
                     absolute
                     -bottom-40
                     left-1/4
-                    h-80
-                    w-80
+                    h-64
+                    w-64
                     rounded-full
                     bg-accent-100/40
                     blur-3xl
+
+                    sm:h-80
+                    sm:w-80
                 "
             />
 
@@ -95,8 +134,8 @@ function OurWork() {
 
                 <SectionTitle
                     eyebrow="Our Work"
-                    title="Creating Better Opportunities"
-                    description="We support children through education, computer skills, health awareness, and food support."
+                    title="Serving People, Creating Opportunities"
+                    description="Abdullah Foundation works across education, basic needs, livelihood, disability support, housing, and family assistance."
                 />
 
                 {/* =================================================
@@ -107,17 +146,21 @@ function OurWork() {
                     className="
                         relative
                         z-10
-                        mt-14
+                        mt-10
                         grid
-                        gap-6
+                        gap-5
+                        sm:mt-12
+                        sm:gap-6
                         md:grid-cols-2
+                        lg:mt-14
                         lg:grid-cols-3
                     "
                 >
                     {programs.map((program) => {
                         const Icon = program.icon;
 
-                        const isAccent = program.color === "accent";
+                        const isAccent =
+                            program.color === "accent";
 
                         return (
                             <article
@@ -126,17 +169,21 @@ function OurWork() {
                                     group
                                     relative
                                     overflow-hidden
-                                    rounded-[2rem]
+                                    rounded-[1.5rem]
                                     border
                                     border-slate-200
                                     bg-white
-                                    p-7
+                                    p-5
                                     shadow-[0_10px_35px_rgba(15,23,42,0.05)]
                                     transition-all
                                     duration-500
                                     hover:-translate-y-2
                                     hover:shadow-[0_25px_60px_rgba(15,23,42,0.10)]
-                                    sm:p-8
+
+                                    sm:rounded-[2rem]
+                                    sm:p-7
+                                    lg:p-8
+
                                     ${
                                         isAccent
                                             ? "hover:border-accent-200"
@@ -153,16 +200,22 @@ function OurWork() {
                                     className={`
                                         pointer-events-none
                                         absolute
-                                        -right-20
-                                        -top-20
-                                        h-48
-                                        w-48
+                                        -right-16
+                                        -top-16
+                                        h-36
+                                        w-36
                                         rounded-full
                                         blur-3xl
                                         opacity-0
                                         transition-opacity
                                         duration-500
                                         group-hover:opacity-100
+
+                                        sm:-right-20
+                                        sm:-top-20
+                                        sm:h-48
+                                        sm:w-48
+
                                         ${
                                             isAccent
                                                 ? "bg-accent-100/70"
@@ -180,16 +233,26 @@ function OurWork() {
                                     className={`
                                         pointer-events-none
                                         absolute
-                                        -right-3
-                                        -top-7
+                                        right-2
+                                        top-1
                                         select-none
-                                        text-[8rem]
+                                        text-[5rem]
                                         font-black
                                         leading-none
+                                        tracking-[-0.06em]
+                                        opacity-90
                                         transition-all
                                         duration-500
-                                        group-hover:translate-x-1
-                                        group-hover:scale-110
+                                        group-hover:scale-105
+
+                                        sm:right-2
+                                        sm:top-2
+                                        sm:text-[7rem]
+
+                                        lg:right-2
+                                        lg:top-2
+                                        lg:text-[8rem]
+
                                         ${
                                             isAccent
                                                 ? "text-accent-50"
@@ -209,8 +272,8 @@ function OurWork() {
                                         relative
                                         z-10
                                         flex
-                                        h-14
-                                        w-14
+                                        h-12
+                                        w-12
                                         items-center
                                         justify-center
                                         rounded-2xl
@@ -218,6 +281,10 @@ function OurWork() {
                                         duration-500
                                         group-hover:rotate-3
                                         group-hover:scale-105
+
+                                        sm:h-14
+                                        sm:w-14
+
                                         ${
                                             isAccent
                                                 ? `
@@ -235,20 +302,35 @@ function OurWork() {
                                         }
                                     `}
                                 >
-                                    <Icon size={25} strokeWidth={2} />
+                                    <Icon
+                                        size={23}
+                                        strokeWidth={2}
+                                    />
                                 </div>
 
                                 {/* =================================================
                                     Content
                                 ================================================== */}
 
-                                <div className="relative z-10 mt-7">
+                                <div
+                                    className="
+                                        relative
+                                        z-10
+                                        mt-6
+
+                                        sm:mt-7
+                                    "
+                                >
                                     <p
                                         className={`
-                                            text-xs
+                                            text-[10px]
                                             font-bold
                                             uppercase
-                                            tracking-[0.18em]
+                                            tracking-[0.16em]
+
+                                            sm:text-xs
+                                            sm:tracking-[0.18em]
+
                                             ${
                                                 isAccent
                                                     ? "text-accent-600"
@@ -261,12 +343,18 @@ function OurWork() {
 
                                     <h3
                                         className="
-                                            mt-3
-                                            text-2xl
+                                            mt-2
+                                            max-w-[90%]
+                                            break-words
+                                            text-xl
                                             font-bold
                                             leading-tight
                                             tracking-tight
                                             text-dark-900
+
+                                            sm:mt-3
+                                            sm:max-w-full
+                                            sm:text-2xl
                                         "
                                     >
                                         {program.title}
@@ -274,10 +362,14 @@ function OurWork() {
 
                                     <p
                                         className="
-                                            mt-4
+                                            mt-3
+                                            max-w-prose
                                             text-sm
-                                            leading-7
+                                            leading-6
                                             text-slate-500
+
+                                            sm:mt-4
+                                            sm:leading-7
                                         "
                                     >
                                         {program.description}
@@ -292,16 +384,21 @@ function OurWork() {
                                     className={`
                                         relative
                                         z-10
-                                        mt-8
+                                        mt-6
                                         flex
-                                        items-center
+                                        items-start
                                         justify-between
                                         gap-3
                                         border-t
                                         border-slate-100
-                                        pt-5
+                                        pt-4
                                         text-sm
                                         font-semibold
+
+                                        sm:mt-8
+                                        sm:items-center
+                                        sm:pt-5
+
                                         ${
                                             isAccent
                                                 ? "text-accent-600"
@@ -309,7 +406,13 @@ function OurWork() {
                                         }
                                     `}
                                 >
-                                    <span className="leading-5">
+                                    <span
+                                        className="
+                                            max-w-[calc(100%-3rem)]
+                                            leading-5
+                                            sm:leading-6
+                                        "
+                                    >
                                         {program.message}
                                     </span>
 
@@ -324,6 +427,7 @@ function OurWork() {
                                             rounded-full
                                             transition-all
                                             duration-300
+
                                             ${
                                                 isAccent
                                                     ? `
@@ -340,7 +444,7 @@ function OurWork() {
                                         `}
                                     >
                                         <ArrowUpRight
-                                            size={17}
+                                            size={16}
                                             className="
                                                 transition-transform
                                                 duration-300
@@ -386,8 +490,10 @@ function OurWork() {
                         relative
                         z-10
                         mx-auto
-                        mt-12
+                        mt-10
                         max-w-3xl
+
+                        sm:mt-12
                     "
                 >
                     <div
@@ -396,26 +502,28 @@ function OurWork() {
                             border
                             border-primary-100
                             bg-white/80
-                            px-6
+                            px-5
                             py-5
                             text-center
                             shadow-[0_10px_30px_rgba(15,23,42,0.04)]
                             backdrop-blur-sm
+
                             sm:px-8
                         "
                     >
                         <p
                             className="
                                 text-sm
-                                leading-7
+                                leading-6
                                 text-slate-500
+
                                 sm:text-base
+                                sm:leading-8
                             "
                         >
-                            Every program starts with a simple belief:
-                            when children receive the right support today,
-                            they have a better chance to build a brighter
-                            tomorrow.
+                            Abdullah Foundation believes that meaningful
+                            change begins with compassion, dignity, and
+                            practical support for people who need it most.
                         </p>
                     </div>
                 </div>

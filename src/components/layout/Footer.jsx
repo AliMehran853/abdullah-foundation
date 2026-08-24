@@ -8,6 +8,11 @@ import {
 
 import Container from "../ui/Container";
 
+const WHATSAPP_DONATE_URL =
+    "https://wa.me/917088091108";
+
+const UPI_PHONE = "7088091108";
+
 function Footer() {
     const quickLinks = [
         {
@@ -163,7 +168,7 @@ function Footer() {
                                         text-slate-500
                                     "
                                 >
-                                    Education for Every Child
+                                    Serving Humanity
                                 </p>
 
                             </div>
@@ -181,9 +186,10 @@ function Footer() {
                                 text-slate-400
                             "
                         >
-                            Creating opportunities for children through
-                            education, digital skills, health awareness,
-                            and compassionate support.
+                            Abdullah Foundation works to support
+                            underprivileged children and families
+                            through free education, food, shelter,
+                            healthcare, skills, and compassionate care.
                         </p>
 
                         {/* Mission Quote */}
@@ -221,9 +227,8 @@ function Footer() {
                                     text-slate-400
                                 "
                             >
-                                Every child deserves the opportunity
-                                to learn, grow, and dream about a better
-                                future.
+                                Free Education, Food & Shelter
+                                for 150 Poor Children.
                             </p>
 
                         </div>
@@ -309,7 +314,7 @@ function Footer() {
 
                         <div className="mt-5 space-y-4">
 
-                            {/* Location */}
+                            {/* Main Location */}
 
                             <div
                                 className="
@@ -335,8 +340,18 @@ function Footer() {
                                         text-slate-400
                                     "
                                 >
-                                    Tundla, Firozabad,
+                                    <span className="font-semibold text-slate-300">
+                                        Muzaffarnagar, UP
+                                    </span>{" "}
+                                    <span className="text-slate-500">
+                                        (Main Branch)
+                                    </span>
+
                                     <br />
+
+                                    Tundla, Firozabad
+                                    <br />
+
                                     Uttar Pradesh, India
                                 </p>
 
@@ -379,10 +394,14 @@ function Footer() {
 
                             </a>
 
-                            {/* Phone */}
+                            {/* WhatsApp / Phone */}
 
-                            <div
+                            <a
+                                href={WHATSAPP_DONATE_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="
+                                    group
                                     flex
                                     items-start
                                     gap-3
@@ -404,9 +423,12 @@ function Footer() {
                                         className="
                                             text-sm
                                             text-slate-400
+                                            transition-colors
+                                            duration-300
+                                            group-hover:text-white
                                         "
                                     >
-                                        Phone / WhatsApp
+                                        WhatsApp / Donate
                                     </p>
 
                                     <span
@@ -421,10 +443,62 @@ function Footer() {
                                             py-0.5
                                             text-[10px]
                                             font-semibold
-                                            text-slate-500
+                                            text-slate-400
                                         "
                                     >
-                                        Coming Soon
+                                        +91 7088091108
+                                    </span>
+
+                                </div>
+
+                            </a>
+
+                            {/* UPI / GPay / PhonePe */}
+
+                            <div
+                                className="
+                                    flex
+                                    items-start
+                                    gap-3
+                                "
+                            >
+
+                                <Heart
+                                    size={18}
+                                    className="
+                                        mt-0.5
+                                        shrink-0
+                                        text-accent-500
+                                    "
+                                />
+
+                                <div>
+
+                                    <p
+                                        className="
+                                            text-sm
+                                            text-slate-400
+                                        "
+                                    >
+                                        UPI / GPay / PhonePe
+                                    </p>
+
+                                    <span
+                                        className="
+                                            mt-1
+                                            inline-flex
+                                            rounded-full
+                                            border
+                                            border-slate-800
+                                            bg-white/[0.03]
+                                            px-2
+                                            py-0.5
+                                            text-[10px]
+                                            font-semibold
+                                            text-slate-400
+                                        "
+                                    >
+                                        {UPI_PHONE}
                                     </span>
 
                                 </div>
@@ -436,7 +510,9 @@ function Footer() {
                         {/* Donate */}
 
                         <a
-                            href="#donate"
+                            href={WHATSAPP_DONATE_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="
                                 group
                                 mt-7
@@ -531,7 +607,7 @@ function Footer() {
                                 fill="currentColor"
                             />
 
-                            for children.
+                            for humanity.
                         </p>
 
                     </div>

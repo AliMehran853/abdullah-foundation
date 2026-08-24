@@ -9,6 +9,9 @@ import Container from "../ui/Container";
 import Button from "../ui/Button";
 import { navigation } from "../../data/navigation";
 
+const WHATSAPP_DONATE_URL =
+    "https://wa.me/917088091108";
+
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState("home");
@@ -102,8 +105,6 @@ function Header() {
                             gap-3
                         "
                     >
-                        {/* Logo Mark */}
-
                         <div
                             className="
                                 flex
@@ -127,8 +128,6 @@ function Header() {
                             AF
                         </div>
 
-                        {/* Logo Text */}
-
                         <div className="hidden sm:block">
                             <p
                                 className="
@@ -149,7 +148,7 @@ function Header() {
                                     text-slate-500
                                 "
                             >
-                                Education for Every Child
+                                Serving Humanity
                             </p>
                         </div>
                     </a>
@@ -225,11 +224,10 @@ function Header() {
 
                     <div className="hidden lg:block">
                         <Button
-                            href="#donate"
+                            href={WHATSAPP_DONATE_URL}
                             variant="accent"
-                            onClick={() =>
-                                setActiveSection("donate")
-                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             <Heart size={17} />
                             Donate Now
@@ -366,13 +364,12 @@ function Header() {
                             "
                         >
                             <Button
-                                href="#donate"
+                                href={WHATSAPP_DONATE_URL}
                                 variant="accent"
                                 className="w-full"
-                                onClick={() => {
-                                    setActiveSection("donate");
-                                    closeMenu();
-                                }}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={closeMenu}
                             >
                                 <Heart size={17} />
                                 Donate Now

@@ -18,6 +18,12 @@ export const navigation = [
     },
 
     {
+        id: "impact",
+        label: "Impact",
+        href: "#impact",
+    },
+
+    {
         id: "gallery",
         label: "Gallery",
         href: "#gallery",

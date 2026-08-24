@@ -1,6 +1,5 @@
 import {
     ArrowUpRight,
-    Clock3,
     Mail,
     MapPin,
     MessageCircle,
@@ -10,6 +9,11 @@ import {
 
 import Container from "../ui/Container";
 import SectionTitle from "../ui/SectionTitle";
+
+const WHATSAPP_URL =
+    "https://wa.me/917088091108";
+
+const PHONE_NUMBER = "+91 7088091108";
 
 function Contact() {
     return (
@@ -68,9 +72,9 @@ function Contact() {
                 ================================================== */}
 
                 <SectionTitle
-                    eyebrow="Contact Us"
+                    eyebrow="Contact Abdullah Foundation"
                     title="Let's Make A Difference Together"
-                    description="Whether you want to support a child, volunteer, or learn more about our work, we'd love to hear from you."
+                    description="Whether you want to support the foundation, ask about our work, or learn how to help, reach out to us directly."
                 />
 
                 {/* =================================================
@@ -199,9 +203,9 @@ function Contact() {
                                         sm:text-base
                                     "
                                 >
-                                    Your questions, ideas, and support can
-                                    help us create better opportunities for
-                                    children.
+                                    Connect with Abdullah Foundation to
+                                    learn more about our work, support our
+                                    mission, or discuss how you can help.
                                 </p>
 
                                 {/* =================================================
@@ -210,7 +214,7 @@ function Contact() {
 
                                 <div className="mt-9 space-y-6">
 
-                                    {/* Location */}
+                                    {/* Main Location */}
 
                                     <div className="flex gap-4">
 
@@ -238,7 +242,7 @@ function Contact() {
                                                     text-blue-200
                                                 "
                                             >
-                                                Location
+                                                Main Branch
                                             </p>
 
                                             <p
@@ -249,7 +253,55 @@ function Contact() {
                                                     text-white
                                                 "
                                             >
-                                                Tundla, Firozabad,
+                                                Muzaffarnagar,
+                                                Uttar Pradesh - 251001,
+                                                India
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                    {/* Second Location */}
+
+                                    <div className="flex gap-4">
+
+                                        <div
+                                            className="
+                                                flex
+                                                h-10
+                                                w-10
+                                                shrink-0
+                                                items-center
+                                                justify-center
+                                                rounded-xl
+                                                bg-white/10
+                                                text-orange-300
+                                            "
+                                        >
+                                            <MapPin size={19} />
+                                        </div>
+
+                                        <div>
+                                            <p
+                                                className="
+                                                    text-xs
+                                                    font-semibold
+                                                    text-blue-200
+                                                "
+                                            >
+                                                Other Location
+                                            </p>
+
+                                            <p
+                                                className="
+                                                    mt-1
+                                                    text-sm
+                                                    leading-6
+                                                    text-white
+                                                "
+                                            >
+                                                Tundla, Firozabad
+                                                <br />
                                                 Uttar Pradesh, India
                                             </p>
                                         </div>
@@ -318,7 +370,16 @@ function Contact() {
 
                                     {/* WhatsApp */}
 
-                                    <div className="flex gap-4">
+                                    <a
+                                        href={WHATSAPP_URL}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="
+                                            group
+                                            flex
+                                            gap-4
+                                        "
+                                    >
 
                                         <div
                                             className="
@@ -331,6 +392,9 @@ function Contact() {
                                                 rounded-xl
                                                 bg-white/10
                                                 text-orange-300
+                                                transition-colors
+                                                duration-300
+                                                group-hover:bg-white/20
                                             "
                                         >
                                             <Phone size={19} />
@@ -345,98 +409,70 @@ function Contact() {
                                                     text-blue-200
                                                 "
                                             >
-                                                Phone / WhatsApp
+                                                WhatsApp / Phone
                                             </p>
 
-                                            <div
+                                            <p
                                                 className="
                                                     mt-1
-                                                    flex
-                                                    items-center
-                                                    gap-2
+                                                    text-sm
+                                                    text-white
+                                                    transition-colors
+                                                    duration-300
+                                                    group-hover:text-orange-300
                                                 "
                                             >
-                                                <span
-                                                    className="
-                                                        text-sm
-                                                        text-blue-100
-                                                    "
-                                                >
-                                                    Available soon
-                                                </span>
-
-                                                <span
-                                                    className="
-                                                        rounded-full
-                                                        bg-white/10
-                                                        px-2
-                                                        py-0.5
-                                                        text-[10px]
-                                                        font-semibold
-                                                        text-orange-300
-                                                    "
-                                                >
-                                                    Coming Soon
-                                                </span>
-                                            </div>
+                                                {PHONE_NUMBER}
+                                            </p>
 
                                         </div>
 
-                                    </div>
+                                    </a>
 
                                 </div>
 
                                 {/* =================================================
-                                    Availability
+                                    WhatsApp CTA
                                 ================================================== */}
 
-                                <div
+                                <a
+                                    href={WHATSAPP_URL}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="
+                                        group
                                         mt-10
-                                        flex
+                                        inline-flex
                                         items-center
-                                        gap-3
-                                        rounded-2xl
-                                        border
-                                        border-white/10
-                                        bg-white/10
-                                        px-4
+                                        gap-2
+                                        rounded-full
+                                        bg-white
+                                        px-5
                                         py-3
-                                        backdrop-blur-sm
+                                        text-sm
+                                        font-bold
+                                        text-primary-700
+                                        shadow-lg
+                                        transition-all
+                                        duration-300
+                                        hover:-translate-y-1
+                                        hover:shadow-xl
                                     "
                                 >
+                                    <MessageCircle size={17} />
 
-                                    <Clock3
-                                        size={18}
-                                        className="shrink-0 text-orange-300"
+                                    Chat on WhatsApp
+
+                                    <ArrowUpRight
+                                        size={16}
+                                        className="
+                                            transition-transform
+                                            duration-300
+                                            group-hover:-translate-y-0.5
+                                            group-hover:translate-x-0.5
+                                        "
                                     />
-
-                                    <div>
-
-                                        <p
-                                            className="
-                                                text-xs
-                                                font-semibold
-                                                text-white
-                                            "
-                                        >
-                                            Contact information
-                                        </p>
-
-                                        <p
-                                            className="
-                                                mt-0.5
-                                                text-[11px]
-                                                text-blue-200
-                                            "
-                                        >
-                                            Additional contact details will
-                                            be added soon.
-                                        </p>
-
-                                    </div>
-
-                                </div>
+                                </a>
 
                             </div>
                         </div>
@@ -484,8 +520,9 @@ function Contact() {
                                         sm:text-base
                                     "
                                 >
-                                    We are preparing more ways for supporters
-                                    and volunteers to connect with us.
+                                    For donations, questions, or general
+                                    enquiries, WhatsApp is the quickest way
+                                    to reach the foundation.
                                 </p>
 
                             </div>
@@ -576,13 +613,23 @@ function Contact() {
 
                                 {/* WhatsApp */}
 
-                                <div
+                                <a
+                                    href={WHATSAPP_URL}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="
+                                        group
                                         rounded-2xl
                                         border
-                                        border-slate-200
-                                        bg-slate-50
+                                        border-accent-200
+                                        bg-accent-50/40
                                         p-5
+                                        transition-all
+                                        duration-300
+                                        hover:-translate-y-1
+                                        hover:border-accent-300
+                                        hover:bg-accent-50
+                                        hover:shadow-[0_15px_35px_rgba(15,23,42,0.06)]
                                     "
                                 >
 
@@ -597,9 +644,12 @@ function Contact() {
                                             bg-white
                                             text-accent-600
                                             shadow-sm
+                                            transition-transform
+                                            duration-300
+                                            group-hover:scale-105
                                         "
                                     >
-                                        <Phone size={20} />
+                                        <MessageCircle size={20} />
                                     </div>
 
                                     <div className="mt-4 flex items-center gap-2">
@@ -614,19 +664,16 @@ function Contact() {
                                             WhatsApp
                                         </h4>
 
-                                        <span
+                                        <ArrowUpRight
+                                            size={15}
                                             className="
-                                                rounded-full
-                                                bg-accent-50
-                                                px-2
-                                                py-0.5
-                                                text-[10px]
-                                                font-semibold
-                                                text-accent-600
+                                                text-slate-400
+                                                transition-transform
+                                                duration-300
+                                                group-hover:-translate-y-0.5
+                                                group-hover:translate-x-0.5
                                             "
-                                        >
-                                            Soon
-                                        </span>
+                                        />
 
                                     </div>
 
@@ -638,10 +685,10 @@ function Contact() {
                                             text-slate-500
                                         "
                                     >
-                                        Contact number will be added soon.
+                                        {PHONE_NUMBER}
                                     </p>
 
-                                </div>
+                                </a>
 
                             </div>
 
@@ -653,7 +700,7 @@ function Contact() {
                                 className="
                                     relative
                                     mt-5
-                                    min-h-[230px]
+                                    min-h-[250px]
                                     overflow-hidden
                                     rounded-2xl
                                     border
@@ -693,9 +740,10 @@ function Contact() {
                                     className="
                                         relative
                                         flex
-                                        min-h-[230px]
+                                        min-h-[250px]
                                         items-center
                                         justify-center
+                                        px-6
                                     "
                                 >
 
@@ -728,7 +776,18 @@ function Contact() {
                                                 text-dark-900
                                             "
                                         >
-                                            Tundla, Uttar Pradesh
+                                            Muzaffarnagar, Uttar Pradesh
+                                        </p>
+
+                                        <p
+                                            className="
+                                                mt-1
+                                                text-xs
+                                                leading-5
+                                                text-slate-500
+                                            "
+                                        >
+                                            Main Branch • 251001, India
                                         </p>
 
                                         <p
@@ -738,8 +797,7 @@ function Contact() {
                                                 text-slate-500
                                             "
                                         >
-                                            Interactive map will be added
-                                            here.
+                                            Tundla, Firozabad
                                         </p>
 
                                     </div>
@@ -749,21 +807,29 @@ function Contact() {
                             </div>
 
                             {/* =================================================
-                                Future Contact Form
+                                WhatsApp Contact Banner
                             ================================================== */}
 
-                            <div
+                            <a
+                                href={WHATSAPP_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="
+                                    group
                                     mt-5
                                     flex
                                     items-center
                                     gap-4
                                     rounded-2xl
                                     border
-                                    border-dashed
-                                    border-slate-200
-                                    bg-slate-50
+                                    border-accent-100
+                                    bg-accent-50/50
                                     p-4
+                                    transition-all
+                                    duration-300
+                                    hover:-translate-y-0.5
+                                    hover:border-accent-200
+                                    hover:bg-accent-50
                                 "
                             >
 
@@ -777,14 +843,14 @@ function Contact() {
                                         justify-center
                                         rounded-xl
                                         bg-white
-                                        text-primary-700
+                                        text-accent-600
                                         shadow-sm
                                     "
                                 >
-                                    <Send size={17} />
+                                    <MessageCircle size={17} />
                                 </div>
 
-                                <div className="min-w-0">
+                                <div className="min-w-0 flex-1">
 
                                     <p
                                         className="
@@ -793,7 +859,7 @@ function Contact() {
                                             text-dark-900
                                         "
                                     >
-                                        Contact form
+                                        Need more information?
                                     </p>
 
                                     <p
@@ -804,13 +870,25 @@ function Contact() {
                                             text-slate-500
                                         "
                                     >
-                                        A direct message form will be
-                                        available in a future update.
+                                        Message Abdullah Foundation on
+                                        WhatsApp.
                                     </p>
 
                                 </div>
 
-                            </div>
+                                <ArrowUpRight
+                                    size={17}
+                                    className="
+                                        shrink-0
+                                        text-accent-600
+                                        transition-transform
+                                        duration-300
+                                        group-hover:-translate-y-0.5
+                                        group-hover:translate-x-0.5
+                                    "
+                                />
+
+                            </a>
 
                         </div>
 
@@ -838,8 +916,8 @@ function Contact() {
                         "
                     >
                         Every message, volunteer, and contribution can help
-                        us move one step closer to a better future for
-                        children.
+                        move us one step closer to a better future for
+                        children and families.
                     </p>
                 </div>
 

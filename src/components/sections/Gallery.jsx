@@ -16,7 +16,7 @@ function Gallery() {
             alt: "Children learning together",
             title: "Learning Together",
             description:
-                "Every child deserves a chance to learn and grow.",
+                "Creating opportunities for children to learn, grow, and dream.",
             size: "large",
         },
         {
@@ -25,25 +25,25 @@ function Gallery() {
             alt: "Children studying together",
             title: "A Place To Learn",
             description:
-                "Creating a safe and supportive space for education.",
+                "Education can open the door to confidence and opportunity.",
             size: "normal",
         },
         {
             id: 3,
             src: Kid3,
-            alt: "Children participating in education",
+            alt: "Children participating in learning",
             title: "Growing Together",
             description:
-                "Building confidence through learning and support.",
+                "Supporting children with care, encouragement, and hope.",
             size: "normal",
         },
         {
             id: 4,
             src: Kid4,
-            alt: "Children learning",
+            alt: "Children learning and smiling",
             title: "Hope For Tomorrow",
             description:
-                "Small opportunities can create meaningful futures.",
+                "Every child deserves the chance to imagine a brighter future.",
             size: "wide",
         },
     ];
@@ -95,6 +95,7 @@ function Gallery() {
             />
 
             <Container>
+
                 {/* =================================================
                     Section Heading
                 ================================================== */}
@@ -102,7 +103,7 @@ function Gallery() {
                 <SectionTitle
                     eyebrow="Gallery"
                     title="Moments That Matter"
-                    description="A glimpse into the learning, care, and community behind Abdullah Foundation."
+                    description="A visual glimpse of the spirit behind education, care, opportunity, and community support."
                 />
 
                 {/* =================================================
@@ -256,7 +257,10 @@ function Gallery() {
                                         backdrop-blur-md
                                     "
                                 >
-                                    {String(image.id).padStart(2, "0")}
+                                    {String(image.id).padStart(
+                                        2,
+                                        "0"
+                                    )}
                                 </span>
 
                                 {/* Arrow */}
@@ -404,7 +408,7 @@ function Gallery() {
                             className="text-primary-700"
                         />
 
-                        Real moments. Real children. Real hope.
+                        Moments of learning, care, and hope.
                     </div>
 
                     <p
@@ -416,8 +420,9 @@ function Gallery() {
                             sm:text-base
                         "
                     >
-                        Behind every photograph is a child with a dream,
-                        a story, and a future worth supporting.
+                        These images represent the spirit of the
+                        foundation's work while the official foundation
+                        photographs can be added later.
                     </p>
                 </div>
             </Container>

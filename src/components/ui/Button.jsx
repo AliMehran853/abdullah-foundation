@@ -6,6 +6,9 @@ function Button({
     className = "",
     onClick,
     disabled = false,
+    target,
+    rel,
+    ariaLabel,
 }) {
     const baseStyles = `
         inline-flex
@@ -91,6 +94,10 @@ function Button({
                 href={href}
                 className={styles}
                 onClick={onClick}
+                target={target}
+                rel={rel}
+                aria-label={ariaLabel}
+                aria-disabled={disabled}
             >
                 {children}
             </a>
@@ -103,6 +110,7 @@ function Button({
             className={styles}
             onClick={onClick}
             disabled={disabled}
+            aria-label={ariaLabel}
         >
             {children}
         </button>

@@ -1,17 +1,40 @@
 import {
     ArrowRight,
     CheckCircle2,
-    Copy,
     Heart,
-    Landmark,
+    Phone,
     QrCode,
     ShieldCheck,
+    Smartphone,
+    MessageCircle,
+    Copy,
 } from "lucide-react";
 
 import Container from "../ui/Container";
 import SectionTitle from "../ui/SectionTitle";
 
+import upiQrImage from "../../assets/donation/abdullah-foundation-upi-qr.png";
+
+const WHATSAPP_DONATE_URL =
+    "https://wa.me/917088091108";
+
+const UPI_PHONE = "7088091108";
+
+const UPI_ID =
+    "BHARATPE09X9Y1H8Z1V91367@yesbankltd";
+
+const PAYMENT_NAME =
+    "ABDULLAH FOUNDATION MUZAFFARNAGAR";
+
 function Donation() {
+    const handleCopyUpi = async () => {
+        try {
+            await navigator.clipboard.writeText(UPI_ID);
+        } catch (error) {
+            console.error("Failed to copy UPI ID:", error);
+        }
+    };
+
     return (
         <section
             id="donate"
@@ -20,9 +43,9 @@ function Donation() {
                 isolate
                 overflow-hidden
                 bg-white
-                py-20
-                sm:py-24
-                lg:py-32
+                py-16
+                sm:py-20
+                lg:py-28
             "
         >
             {/* =====================================================
@@ -37,11 +60,14 @@ function Donation() {
                     -left-40
                     top-24
                     -z-10
-                    h-96
-                    w-96
+                    h-72
+                    w-72
                     rounded-full
                     bg-primary-50/80
                     blur-3xl
+
+                    sm:h-96
+                    sm:w-96
                 "
             />
 
@@ -53,11 +79,14 @@ function Donation() {
                     -right-40
                     bottom-0
                     -z-10
-                    h-96
-                    w-96
+                    h-72
+                    w-72
                     rounded-full
                     bg-accent-50/70
                     blur-3xl
+
+                    sm:h-96
+                    sm:w-96
                 "
             />
 
@@ -68,9 +97,9 @@ function Donation() {
 
                 <div className="relative z-10">
                     <SectionTitle
-                        eyebrow="Support Our Mission"
+                        eyebrow="Support Abdullah Foundation"
                         title="Help Create A Brighter Future"
-                        description="Your support can help provide children with education, learning resources, food, and care."
+                        description="Your support can help provide free education, food, shelter, healthcare, and other essential support to children and families in need."
                     />
                 </div>
 
@@ -83,14 +112,17 @@ function Donation() {
                         relative
                         z-10
                         mx-auto
-                        mt-14
+                        mt-10
                         max-w-6xl
                         overflow-hidden
-                        rounded-[2rem]
+                        rounded-[1.75rem]
                         border
                         border-slate-200
                         bg-white
                         shadow-[0_30px_90px_rgba(15,23,42,0.10)]
+
+                        sm:mt-14
+                        sm:rounded-[2rem]
                     "
                 >
                     <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
@@ -104,8 +136,9 @@ function Donation() {
                                 relative
                                 overflow-hidden
                                 bg-primary-700
-                                p-7
+                                p-6
                                 text-white
+
                                 sm:p-10
                                 lg:p-12
                                 xl:p-14
@@ -120,10 +153,13 @@ function Donation() {
                                     absolute
                                     -right-24
                                     -top-24
-                                    h-72
-                                    w-72
+                                    h-60
+                                    w-60
                                     rounded-full
                                     bg-white/10
+
+                                    sm:h-72
+                                    sm:w-72
                                 "
                             />
 
@@ -134,11 +170,14 @@ function Donation() {
                                     absolute
                                     -bottom-36
                                     -left-24
-                                    h-80
-                                    w-80
+                                    h-72
+                                    w-72
                                     rounded-full
                                     bg-accent-500/20
                                     blur-2xl
+
+                                    sm:h-80
+                                    sm:w-80
                                 "
                             />
 
@@ -147,13 +186,18 @@ function Donation() {
                                 className="
                                     pointer-events-none
                                     absolute
-                                    right-10
-                                    bottom-10
-                                    h-20
-                                    w-20
+                                    right-8
+                                    bottom-8
+                                    h-16
+                                    w-16
                                     rounded-full
                                     border
                                     border-white/10
+
+                                    sm:right-10
+                                    sm:bottom-10
+                                    sm:h-20
+                                    sm:w-20
                                 "
                             />
 
@@ -166,8 +210,8 @@ function Donation() {
                                 <div
                                     className="
                                         flex
-                                        h-14
-                                        w-14
+                                        h-12
+                                        w-12
                                         items-center
                                         justify-center
                                         rounded-2xl
@@ -176,10 +220,13 @@ function Donation() {
                                         bg-white/10
                                         text-orange-300
                                         backdrop-blur-sm
+
+                                        sm:h-14
+                                        sm:w-14
                                     "
                                 >
                                     <Heart
-                                        size={24}
+                                        size={22}
                                         fill="currentColor"
                                     />
                                 </div>
@@ -188,12 +235,16 @@ function Donation() {
 
                                 <p
                                     className="
-                                        mt-8
-                                        text-xs
+                                        mt-7
+                                        text-[10px]
                                         font-bold
                                         uppercase
-                                        tracking-[0.2em]
+                                        tracking-[0.18em]
                                         text-blue-200
+
+                                        sm:mt-8
+                                        sm:text-xs
+                                        sm:tracking-[0.2em]
                                     "
                                 >
                                     Make A Difference
@@ -205,11 +256,12 @@ function Donation() {
                                     className="
                                         mt-3
                                         max-w-md
-                                        text-3xl
+                                        text-2xl
                                         font-bold
                                         leading-[1.15]
                                         tracking-tight
                                         text-white
+
                                         sm:text-4xl
                                         lg:text-[2.7rem]
                                     "
@@ -231,33 +283,45 @@ function Donation() {
 
                                 <p
                                     className="
-                                        mt-6
+                                        mt-5
                                         max-w-lg
                                         text-sm
-                                        leading-7
+                                        leading-6
                                         text-blue-100
+
+                                        sm:mt-6
                                         sm:text-base
+                                        sm:leading-7
                                     "
                                 >
-                                    Your support can help Abdullah
-                                    Foundation provide children with
-                                    learning opportunities and essential
-                                    support.
+                                    Your support helps Abdullah Foundation
+                                    continue its mission of serving
+                                    underprivileged children and families
+                                    with dignity and compassion.
                                 </p>
 
                                 {/* =================================================
                                     What Your Support Helps With
                                 ================================================== */}
 
-                                <div className="mt-9 space-y-4">
+                                <div
+                                    className="
+                                        mt-8
+                                        space-y-4
 
+                                        sm:mt-9
+                                    "
+                                >
                                     <p
                                         className="
-                                            text-xs
+                                            text-[10px]
                                             font-bold
                                             uppercase
-                                            tracking-[0.16em]
+                                            tracking-[0.14em]
                                             text-blue-200
+
+                                            sm:text-xs
+                                            sm:tracking-[0.16em]
                                         "
                                     >
                                         Your support can help with
@@ -267,7 +331,7 @@ function Donation() {
 
                                         <div className="flex items-start gap-3">
                                             <CheckCircle2
-                                                size={19}
+                                                size={18}
                                                 className="
                                                     mt-0.5
                                                     shrink-0
@@ -282,14 +346,14 @@ function Donation() {
                                                     text-blue-50
                                                 "
                                             >
-                                                Educational materials and
-                                                books
+                                                Free education, books, and
+                                                educational support
                                             </span>
                                         </div>
 
                                         <div className="flex items-start gap-3">
                                             <CheckCircle2
-                                                size={19}
+                                                size={18}
                                                 className="
                                                     mt-0.5
                                                     shrink-0
@@ -304,14 +368,14 @@ function Donation() {
                                                     text-blue-50
                                                 "
                                             >
-                                                Learning and computer
-                                                education
+                                                Food, clothing, medicine,
+                                                and essential care
                                             </span>
                                         </div>
 
                                         <div className="flex items-start gap-3">
                                             <CheckCircle2
-                                                size={19}
+                                                size={18}
                                                 className="
                                                     mt-0.5
                                                     shrink-0
@@ -326,7 +390,8 @@ function Donation() {
                                                     text-blue-50
                                                 "
                                             >
-                                                Food and basic care
+                                                Housing, livelihood, and
+                                                support for families in need
                                             </span>
                                         </div>
 
@@ -339,13 +404,15 @@ function Donation() {
 
                                 <div
                                     className="
-                                        mt-10
+                                        mt-8
                                         rounded-2xl
                                         border
                                         border-white/10
                                         bg-white/10
                                         p-4
                                         backdrop-blur-md
+
+                                        sm:mt-10
                                     "
                                 >
                                     <div className="flex items-start gap-3">
@@ -353,20 +420,23 @@ function Donation() {
                                         <div
                                             className="
                                                 flex
-                                                h-10
-                                                w-10
+                                                h-9
+                                                w-9
                                                 shrink-0
                                                 items-center
                                                 justify-center
                                                 rounded-xl
                                                 bg-white/10
                                                 text-orange-300
+
+                                                sm:h-10
+                                                sm:w-10
                                             "
                                         >
-                                            <ShieldCheck size={19} />
+                                            <ShieldCheck size={18} />
                                         </div>
 
-                                        <div>
+                                        <div className="min-w-0">
                                             <p
                                                 className="
                                                     text-sm
@@ -374,7 +444,7 @@ function Donation() {
                                                     text-white
                                                 "
                                             >
-                                                Giving with purpose
+                                                Give with purpose
                                             </p>
 
                                             <p
@@ -385,9 +455,10 @@ function Donation() {
                                                     text-blue-200
                                                 "
                                             >
-                                                Every contribution is intended
-                                                to support the foundation's
-                                                work with children.
+                                                For donation enquiries,
+                                                please contact Abdullah
+                                                Foundation directly through
+                                                WhatsApp.
                                             </p>
                                         </div>
 
@@ -404,7 +475,8 @@ function Donation() {
                         <div
                             className="
                                 bg-slate-50
-                                p-7
+                                p-6
+
                                 sm:p-10
                                 lg:p-12
                                 xl:p-14
@@ -420,27 +492,34 @@ function Donation() {
                                     className="
                                         mx-auto
                                         flex
-                                        h-14
-                                        w-14
+                                        h-12
+                                        w-12
                                         items-center
                                         justify-center
                                         rounded-2xl
                                         bg-white
                                         text-primary-700
                                         shadow-[0_8px_25px_rgba(15,23,42,0.07)]
+
+                                        sm:h-14
+                                        sm:w-14
                                     "
                                 >
-                                    <Heart size={24} />
+                                    <Heart size={22} />
                                 </div>
 
                                 <p
                                     className="
-                                        mt-5
-                                        text-xs
+                                        mt-4
+                                        text-[10px]
                                         font-bold
                                         uppercase
-                                        tracking-[0.18em]
+                                        tracking-[0.16em]
                                         text-primary-700
+
+                                        sm:mt-5
+                                        sm:text-xs
+                                        sm:tracking-[0.18em]
                                     "
                                 >
                                     Ways To Give
@@ -453,6 +532,7 @@ function Donation() {
                                         font-bold
                                         tracking-tight
                                         text-dark-900
+
                                         sm:text-3xl
                                     "
                                 >
@@ -469,39 +549,175 @@ function Donation() {
                                         text-slate-500
                                     "
                                 >
-                                    Donation details will be available here
-                                    once the foundation provides the official
-                                    payment information.
+                                    Contact the foundation through WhatsApp
+                                    or use the official UPI, GPay, or PhonePe
+                                    payment details below.
                                 </p>
 
                             </div>
 
                             {/* =================================================
-                                UPI CARD
+                                WhatsApp CARD
+                            ================================================== */}
+
+                            <a
+                                href={WHATSAPP_DONATE_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="
+                                    group
+                                    mt-7
+                                    block
+                                    rounded-[1.5rem]
+                                    border
+                                    border-accent-200
+                                    bg-white
+                                    p-5
+                                    shadow-sm
+                                    transition-all
+                                    duration-300
+                                    hover:-translate-y-1
+                                    hover:border-accent-300
+                                    hover:shadow-[0_15px_40px_rgba(15,23,42,0.08)]
+
+                                    sm:mt-8
+                                    sm:rounded-[1.75rem]
+                                    sm:p-6
+                                "
+                            >
+                                <div
+                                    className="
+                                        flex
+                                        items-start
+                                        justify-between
+                                        gap-4
+                                    "
+                                >
+                                    <div
+                                        className="
+                                            flex
+                                            min-w-0
+                                            items-center
+                                            gap-3
+                                        "
+                                    >
+                                        <div
+                                            className="
+                                                flex
+                                                h-11
+                                                w-11
+                                                shrink-0
+                                                items-center
+                                                justify-center
+                                                rounded-xl
+                                                bg-accent-50
+                                                text-accent-600
+                                            "
+                                        >
+                                            <MessageCircle size={20} />
+                                        </div>
+
+                                        <div className="min-w-0">
+                                            <h4
+                                                className="
+                                                    text-sm
+                                                    font-bold
+                                                    text-dark-900
+                                                "
+                                            >
+                                                WhatsApp Donation
+                                            </h4>
+
+                                            <p
+                                                className="
+                                                    mt-0.5
+                                                    text-xs
+                                                    leading-5
+                                                    text-slate-400
+                                                "
+                                            >
+                                                Contact the foundation directly
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <ArrowRight
+                                        size={18}
+                                        className="
+                                            shrink-0
+                                            text-accent-500
+                                            transition-transform
+                                            duration-300
+                                            group-hover:translate-x-1
+                                        "
+                                    />
+                                </div>
+
+                                <div
+                                    className="
+                                        mt-5
+                                        rounded-xl
+                                        bg-accent-50
+                                        px-4
+                                        py-3
+                                    "
+                                >
+                                    <p
+                                        className="
+                                            text-xs
+                                            font-semibold
+                                            text-accent-700
+                                        "
+                                    >
+                                        WhatsApp / Donate
+                                    </p>
+
+                                    <p
+                                        className="
+                                            mt-1
+                                            break-all
+                                            text-sm
+                                            font-bold
+                                            tracking-wide
+                                            text-accent-900
+                                        "
+                                    >
+                                        +91 7088091108
+                                    </p>
+                                </div>
+                            </a>
+
+                            {/* =================================================
+                                UPI / GPay / PhonePe CARD
                             ================================================== */}
 
                             <div
                                 className="
-                                    mt-8
-                                    rounded-[1.75rem]
+                                    mt-5
+                                    rounded-[1.5rem]
                                     border
                                     border-slate-200
                                     bg-white
                                     p-5
                                     shadow-sm
+
+                                    sm:mt-6
+                                    sm:rounded-[1.75rem]
                                     sm:p-6
                                 "
                             >
-
                                 <div
                                     className="
                                         flex
-                                        items-center
-                                        justify-between
-                                        gap-4
+                                        flex-col
+                                        gap-3
+
+                                        sm:flex-row
+                                        sm:items-center
+                                        sm:justify-between
+                                        sm:gap-4
                                     "
                                 >
-
                                     <div className="flex items-center gap-3">
 
                                         <div
@@ -509,6 +725,7 @@ function Donation() {
                                                 flex
                                                 h-11
                                                 w-11
+                                                shrink-0
                                                 items-center
                                                 justify-center
                                                 rounded-xl
@@ -516,7 +733,7 @@ function Donation() {
                                                 text-primary-700
                                             "
                                         >
-                                            <QrCode size={20} />
+                                            <Smartphone size={20} />
                                         </div>
 
                                         <div>
@@ -527,170 +744,248 @@ function Donation() {
                                                     text-dark-900
                                                 "
                                             >
-                                                UPI Payment
+                                                UPI / GPay / PhonePe
                                             </h4>
 
                                             <p
                                                 className="
                                                     mt-0.5
                                                     text-xs
+                                                    leading-5
                                                     text-slate-400
                                                 "
                                             >
-                                                Scan to donate
+                                                Official payment details
                                             </p>
                                         </div>
-
                                     </div>
 
                                     <span
                                         className="
+                                            w-fit
                                             rounded-full
-                                            bg-amber-50
+                                            bg-primary-50
                                             px-3
                                             py-1
                                             text-[10px]
                                             font-bold
                                             uppercase
                                             tracking-wider
-                                            text-amber-600
+                                            text-primary-700
                                         "
                                     >
-                                        Coming Soon
+                                        Available
                                     </span>
-
                                 </div>
 
-                                {/* QR Placeholder */}
-
-                                <div
-                                    className="
-                                        mx-auto
-                                        mt-6
-                                        flex
-                                        aspect-square
-                                        w-full
-                                        max-w-[220px]
-                                        items-center
-                                        justify-center
-                                        rounded-[1.5rem]
-                                        border
-                                        border-dashed
-                                        border-slate-300
-                                        bg-slate-50
-                                    "
-                                >
-                                    <div className="text-center">
-
-                                        <div
-                                            className="
-                                                mx-auto
-                                                flex
-                                                h-16
-                                                w-16
-                                                items-center
-                                                justify-center
-                                                rounded-2xl
-                                                bg-white
-                                                text-slate-300
-                                                shadow-sm
-                                            "
-                                        >
-                                            <QrCode
-                                                size={42}
-                                                strokeWidth={1.3}
-                                            />
-                                        </div>
-
-                                        <p
-                                            className="
-                                                mt-4
-                                                text-sm
-                                                font-semibold
-                                                text-slate-500
-                                            "
-                                        >
-                                            Official QR Code
-                                        </p>
-
-                                        <p
-                                            className="
-                                                mt-1
-                                                text-xs
-                                                text-slate-400
-                                            "
-                                        >
-                                            Will be added here
-                                        </p>
-
-                                    </div>
-                                </div>
+                                {/* Payment Name */}
 
                                 <div
                                     className="
                                         mt-5
-                                        flex
-                                        items-center
-                                        justify-center
-                                        gap-2
-                                        text-xs
-                                        text-slate-400
+                                        rounded-xl
+                                        bg-slate-50
+                                        px-4
+                                        py-3
                                     "
                                 >
-                                    <ShieldCheck size={14} />
+                                    <p
+                                        className="
+                                            text-[11px]
+                                            font-medium
+                                            text-slate-400
+                                        "
+                                    >
+                                        Payment Name
+                                    </p>
 
-                                    Official payment details only
+                                    <p
+                                        className="
+                                            mt-1
+                                            break-words
+                                            text-sm
+                                            font-bold
+                                            leading-6
+                                            text-dark-900
+                                        "
+                                    >
+                                        {PAYMENT_NAME}
+                                    </p>
                                 </div>
 
-                            </div>
+                                {/* UPI ID */}
 
-                            {/* =================================================
-                                Divider
-                            ================================================== */}
-
-                            <div className="my-7 flex items-center gap-4">
-
-                                <div className="h-px flex-1 bg-slate-200" />
-
-                                <span
+                                <div
                                     className="
-                                        text-[10px]
-                                        font-bold
-                                        uppercase
-                                        tracking-[0.18em]
+                                        mt-3
+                                        rounded-xl
+                                        bg-slate-50
+                                        px-4
+                                        py-3
+                                    "
+                                >
+                                    <div
+                                        className="
+                                            flex
+                                            items-start
+                                            justify-between
+                                            gap-3
+                                        "
+                                    >
+                                        <div className="min-w-0">
+                                            <p
+                                                className="
+                                                    text-[11px]
+                                                    font-medium
+                                                    text-slate-400
+                                                "
+                                            >
+                                                UPI ID
+                                            </p>
+
+                                            <p
+                                                className="
+                                                    mt-1
+                                                    break-all
+                                                    text-sm
+                                                    font-semibold
+                                                    leading-6
+                                                    text-dark-900
+                                                "
+                                            >
+                                                {UPI_ID}
+                                            </p>
+                                        </div>
+
+                                        <button
+                                            type="button"
+                                            onClick={handleCopyUpi}
+                                            aria-label="Copy UPI ID"
+                                            title="Copy UPI ID"
+                                            className="
+                                                flex
+                                                h-9
+                                                w-9
+                                                shrink-0
+                                                items-center
+                                                justify-center
+                                                rounded-lg
+                                                border
+                                                border-slate-200
+                                                bg-white
+                                                text-slate-500
+                                                transition-all
+                                                duration-200
+                                                hover:border-primary-200
+                                                hover:bg-primary-50
+                                                hover:text-primary-700
+                                                focus:outline-none
+                                                focus-visible:ring-2
+                                                focus-visible:ring-primary-700
+                                            "
+                                        >
+                                            <Copy size={15} />
+                                        </button>
+                                    </div>
+                                </div>
+
+                                {/* Mobile Number */}
+
+                                <div
+                                    className="
+                                        mt-3
+                                        rounded-xl
+                                        border
+                                        border-primary-100
+                                        bg-primary-50/60
+                                        px-4
+                                        py-4
+                                        text-center
+                                    "
+                                >
+                                    <p
+                                        className="
+                                            text-xs
+                                            font-medium
+                                            text-primary-600
+                                        "
+                                    >
+                                        UPI / GPay / PhonePe Number
+                                    </p>
+
+                                    <p
+                                        className="
+                                            mt-2
+                                            text-xl
+                                            font-extrabold
+                                            tracking-wider
+                                            text-primary-800
+
+                                            sm:text-2xl
+                                        "
+                                    >
+                                        {UPI_PHONE}
+                                    </p>
+                                </div>
+
+                                <p
+                                    className="
+                                        mt-4
+                                        flex
+                                        items-start
+                                        gap-2
+                                        text-xs
+                                        leading-5
                                         text-slate-400
                                     "
                                 >
-                                    Or Bank Transfer
-                                </span>
+                                    <ShieldCheck
+                                        size={14}
+                                        className="
+                                            mt-0.5
+                                            shrink-0
+                                            text-primary-600
+                                        "
+                                    />
 
-                                <div className="h-px flex-1 bg-slate-200" />
-
+                                    Please verify the payment details
+                                    directly with Abdullah Foundation
+                                    before sending money.
+                                </p>
                             </div>
 
                             {/* =================================================
-                                Bank Card
+                                QR CODE CARD
                             ================================================== */}
 
                             <div
                                 className="
-                                    rounded-[1.75rem]
+                                    mt-5
+                                    rounded-[1.5rem]
                                     border
                                     border-slate-200
                                     bg-white
                                     p-5
                                     shadow-sm
+
+                                    sm:mt-6
+                                    sm:rounded-[1.75rem]
                                     sm:p-6
                                 "
                             >
-
-                                <div className="flex items-center gap-3">
-
+                                <div
+                                    className="
+                                        flex
+                                        items-center
+                                        gap-3
+                                    "
+                                >
                                     <div
                                         className="
                                             flex
                                             h-11
                                             w-11
+                                            shrink-0
                                             items-center
                                             justify-center
                                             rounded-xl
@@ -698,10 +993,10 @@ function Donation() {
                                             text-primary-700
                                         "
                                     >
-                                        <Landmark size={20} />
+                                        <QrCode size={20} />
                                     </div>
 
-                                    <div>
+                                    <div className="min-w-0">
                                         <h4
                                             className="
                                                 text-sm
@@ -709,203 +1004,121 @@ function Donation() {
                                                 text-dark-900
                                             "
                                         >
-                                            Bank Transfer
+                                            UPI QR Code
                                         </h4>
 
                                         <p
                                             className="
                                                 mt-0.5
                                                 text-xs
+                                                leading-5
                                                 text-slate-400
                                             "
                                         >
-                                            Official account information
+                                            Scan to pay through a supported
+                                            UPI app
                                         </p>
                                     </div>
-
                                 </div>
 
-                                {/* Account Details */}
+                                {/* QR Image */}
 
-                                <div className="mt-5 space-y-3">
-
-                                    <div
-                                        className="
-                                            flex
-                                            flex-col
-                                            gap-1
-                                            rounded-xl
-                                            bg-slate-50
-                                            px-4
-                                            py-3
-                                            sm:flex-row
-                                            sm:items-center
-                                            sm:justify-between
-                                            sm:gap-4
-                                        "
-                                    >
-                                        <span
-                                            className="
-                                                text-xs
-                                                text-slate-500
-                                            "
-                                        >
-                                            Account Name
-                                        </span>
-
-                                        <span
-                                            className="
-                                                text-sm
-                                                font-semibold
-                                                text-dark-900
-                                            "
-                                        >
-                                            Abdullah Foundation
-                                        </span>
-                                    </div>
-
-                                    <div
-                                        className="
-                                            flex
-                                            flex-col
-                                            gap-1
-                                            rounded-xl
-                                            bg-slate-50
-                                            px-4
-                                            py-3
-                                            sm:flex-row
-                                            sm:items-center
-                                            sm:justify-between
-                                            sm:gap-4
-                                        "
-                                    >
-                                        <span
-                                            className="
-                                                text-xs
-                                                text-slate-500
-                                            "
-                                        >
-                                            Account Number
-                                        </span>
-
-                                        <span
-                                            className="
-                                                text-sm
-                                                font-medium
-                                                text-slate-400
-                                            "
-                                        >
-                                            Not provided yet
-                                        </span>
-                                    </div>
-
-                                    <div
-                                        className="
-                                            flex
-                                            flex-col
-                                            gap-1
-                                            rounded-xl
-                                            bg-slate-50
-                                            px-4
-                                            py-3
-                                            sm:flex-row
-                                            sm:items-center
-                                            sm:justify-between
-                                            sm:gap-4
-                                        "
-                                    >
-                                        <span
-                                            className="
-                                                text-xs
-                                                text-slate-500
-                                            "
-                                        >
-                                            IFSC
-                                        </span>
-
-                                        <span
-                                            className="
-                                                text-sm
-                                                font-medium
-                                                text-slate-400
-                                            "
-                                        >
-                                            Not provided yet
-                                        </span>
-                                    </div>
-
-                                </div>
-
-                                {/* Disabled Copy */}
-
-                                <button
-                                    type="button"
-                                    disabled
+                                <div
                                     className="
-                                        mt-4
+                                        mx-auto
+                                        mt-6
                                         flex
                                         w-full
-                                        cursor-not-allowed
+                                        max-w-[260px]
                                         items-center
                                         justify-center
-                                        gap-2
-                                        rounded-xl
+                                        rounded-[1.5rem]
                                         border
                                         border-slate-200
                                         bg-white
-                                        px-4
-                                        py-3
-                                        text-xs
-                                        font-semibold
-                                        text-slate-400
+                                        p-4
+                                        shadow-sm
+
+                                        sm:max-w-[280px]
                                     "
                                 >
-                                    <Copy size={15} />
+                                    <img
+                                        src={upiQrImage}
+                                        alt="UPI QR code for Abdullah Foundation Muzaffarnagar"
+                                        className="
+                                            block
+                                            aspect-square
+                                            h-auto
+                                            w-full
+                                            max-w-[240px]
+                                            object-contain
+                                        "
+                                        loading="lazy"
+                                    />
+                                </div>
 
-                                    Copy account details
-                                </button>
+                                {/* QR Name */}
 
-                            </div>
-
-                            {/* =================================================
-                                Information Notice
-                            ================================================== */}
-
-                            <div
-                                className="
-                                    mt-5
-                                    flex
-                                    items-start
-                                    gap-3
-                                    rounded-2xl
-                                    border
-                                    border-primary-100
-                                    bg-primary-50/60
-                                    p-4
-                                "
-                            >
-
-                                <ShieldCheck
-                                    size={18}
+                                <div
                                     className="
-                                        mt-0.5
-                                        shrink-0
-                                        text-primary-700
+                                        mt-5
+                                        rounded-xl
+                                        bg-slate-50
+                                        px-4
+                                        py-3
+                                        text-center
                                     "
-                                />
+                                >
+                                    <p
+                                        className="
+                                            text-[11px]
+                                            font-medium
+                                            text-slate-400
+                                        "
+                                    >
+                                        Payment Recipient
+                                    </p>
+
+                                    <p
+                                        className="
+                                            mt-1
+                                            break-words
+                                            text-sm
+                                            font-bold
+                                            leading-6
+                                            text-dark-900
+                                        "
+                                    >
+                                        {PAYMENT_NAME}
+                                    </p>
+                                </div>
+
+                                {/* QR Notice */}
 
                                 <p
                                     className="
+                                        mt-4
+                                        flex
+                                        items-start
+                                        gap-2
                                         text-xs
                                         leading-5
-                                        text-primary-800
+                                        text-slate-400
                                     "
                                 >
-                                    Payment information will be updated
-                                    after the foundation provides the
-                                    official UPI and bank details.
-                                </p>
+                                    <ShieldCheck
+                                        size={14}
+                                        className="
+                                            mt-0.5
+                                            shrink-0
+                                            text-primary-600
+                                        "
+                                    />
 
+                                    Please confirm the recipient name and
+                                    payment details in your UPI app before
+                                    completing a payment.
+                                </p>
                             </div>
 
                         </div>
@@ -921,49 +1134,71 @@ function Donation() {
                         relative
                         z-10
                         mx-auto
-                        mt-10
+                        mt-8
                         max-w-2xl
                         text-center
+
+                        sm:mt-10
                     "
                 >
-
-                    <div
+                    <a
+                        href={WHATSAPP_DONATE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="
+                            group
                             inline-flex
+                            max-w-full
                             items-center
+                            justify-center
                             gap-2
                             rounded-full
                             border
                             border-slate-200
                             bg-white
                             px-4
-                            py-2.5
-                            text-xs
+                            py-3
+                            text-center
+                            text-sm
                             font-semibold
-                            text-slate-600
+                            leading-5
+                            text-slate-700
                             shadow-sm
-                            sm:text-sm
+                            transition-all
+                            duration-300
+                            hover:-translate-y-0.5
+                            hover:border-accent-200
+                            hover:text-accent-700
+                            hover:shadow-md
+
+                            sm:px-5
                         "
                     >
-                        <Heart
-                            size={15}
-                            className="text-accent-500"
-                            fill="currentColor"
+                        <Phone
+                            size={16}
+                            className="shrink-0 text-accent-500"
                         />
 
-                        Every child deserves a chance to learn.
+                        <span>
+                            Contact us on WhatsApp
+                        </span>
 
                         <ArrowRight
                             size={15}
-                            className="text-primary-700"
+                            className="
+                                shrink-0
+                                text-primary-700
+                                transition-transform
+                                duration-300
+                                group-hover:translate-x-1
+                            "
                         />
-                    </div>
-
+                    </a>
                 </div>
-
             </Container>
         </section>
     );
 }
 
 export default Donation;
+

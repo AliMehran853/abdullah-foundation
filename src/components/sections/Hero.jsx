@@ -11,6 +11,9 @@ import Button from "../ui/Button";
 
 import heroImage from "../../assets/images/hero.webp";
 
+const WHATSAPP_DONATE_URL =
+    "https://wa.me/917088091108";
+
 function Hero() {
     return (
         <section
@@ -102,7 +105,7 @@ function Hero() {
                             <GraduationCap size={17} />
 
                             <span>
-                                Education for Every Child
+                                Abdullah Foundation
                             </span>
                         </div>
 
@@ -147,9 +150,10 @@ function Hero() {
                                 sm:text-lg
                             "
                         >
-                            Help us give poor and orphan children access
-                            to education, computer skills, health support,
-                            and a brighter future.
+                            Abdullah Foundation is committed to serving
+                            underprivileged children and families through
+                            free education, food, shelter, healthcare,
+                            skills, and compassionate support.
                         </p>
 
                         {/* Buttons */}
@@ -164,8 +168,10 @@ function Hero() {
                             "
                         >
                             <Button
-                                href="#donate"
+                                href={WHATSAPP_DONATE_URL}
                                 variant="accent"
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 <Heart
                                     size={17}
@@ -201,6 +207,7 @@ function Hero() {
                             "
                         >
                             <div className="flex items-center gap-2.5">
+
                                 <div
                                     className="
                                         flex
@@ -225,7 +232,7 @@ function Hero() {
                                             text-dark-900
                                         "
                                     >
-                                        100+
+                                        150
                                     </p>
 
                                     <p
@@ -234,7 +241,7 @@ function Hero() {
                                             text-slate-500
                                         "
                                     >
-                                        Kids Helped
+                                        Poor Children
                                     </p>
                                 </div>
                             </div>
@@ -250,6 +257,7 @@ function Hero() {
                             />
 
                             <div className="flex items-center gap-2.5">
+
                                 <div
                                     className="
                                         flex
@@ -274,7 +282,7 @@ function Hero() {
                                             text-dark-900
                                         "
                                     >
-                                        Tundla, India
+                                        Muzaffarnagar, UP
                                     </p>
 
                                     <p
@@ -283,7 +291,7 @@ function Hero() {
                                             text-slate-500
                                         "
                                     >
-                                        Local community support
+                                        Main Branch • Tundla, Firozabad
                                     </p>
                                 </div>
                             </div>
@@ -351,7 +359,7 @@ function Hero() {
                         >
                             <img
                                 src={heroImage}
-                                alt="Children learning together"
+                                alt="Children supported by Abdullah Foundation"
                                 loading="eager"
                                 className="
                                     h-[420px]
@@ -473,7 +481,7 @@ function Hero() {
                                         text-slate-500
                                     "
                                 >
-                                    Small help. Big future.
+                                    Education, care, and hope.
                                 </p>
                             </div>
                         </div>

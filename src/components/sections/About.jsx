@@ -58,14 +58,15 @@ function About() {
             />
 
             <Container>
+
                 {/* =================================================
                     Section Heading
                 ================================================== */}
 
                 <SectionTitle
-                    eyebrow="About Us"
-                    title="Every Child Deserves A Future"
-                    description="We believe education is every child's right, not a privilege."
+                    eyebrow="About Abdullah Foundation"
+                    title="Serving Humanity With Care And Dignity"
+                    description="Abdullah Foundation works to support poor children and families through education, food, shelter, healthcare, skills, and compassionate service."
                 />
 
                 {/* =================================================
@@ -83,6 +84,7 @@ function About() {
                         lg:gap-20
                     "
                 >
+
                     {/* =================================================
                         Image Side
                     ================================================== */}
@@ -140,7 +142,7 @@ function About() {
                         >
                             <img
                                 src={aboutImage}
-                                alt="Children learning at Abdullah Foundation"
+                                alt="Children supported through Abdullah Foundation"
                                 loading="lazy"
                                 className="
                                     h-[380px]
@@ -246,7 +248,7 @@ function About() {
                                             text-dark-900
                                         "
                                     >
-                                        A heart-driven mission
+                                        Helping people with dignity
                                     </p>
 
                                     <p
@@ -257,7 +259,8 @@ function About() {
                                             text-slate-500
                                         "
                                     >
-                                        Helping children learn with dignity.
+                                        Education, food, shelter, and
+                                        compassionate support.
                                     </p>
                                 </div>
                             </div>
@@ -284,7 +287,7 @@ function About() {
                         >
                             <Sparkles size={16} />
 
-                            Our Story
+                            Our Mission
                         </span>
 
                         {/* Heading */}
@@ -301,7 +304,7 @@ function About() {
                                 sm:text-4xl
                             "
                         >
-                            Creating opportunities,
+                            Free support,
 
                             <span
                                 className="
@@ -309,7 +312,7 @@ function About() {
                                     text-primary-700
                                 "
                             >
-                                one child at a time.
+                                with hope for a better future.
                             </span>
                         </h3>
 
@@ -326,33 +329,53 @@ function About() {
                             "
                         >
                             <p>
-                                Abdullah Foundation is a small, heart-driven
-                                initiative started in Tundla, Uttar Pradesh,
-                                to help poor and orphan children who cannot
-                                afford school.
+                                Abdullah Foundation is dedicated to serving
+                                underprivileged children and families with
+                                compassion, dignity, and practical support.
                             </p>
 
                             <p>
-                                We believe education is every child's right,
-                                not a privilege. Through free books, tuition,
-                                basic computer training, and health awareness,
-                                we want to create a safe environment where
-                                children can learn and grow with dignity.
+                                Its mission includes free education, food,
+                                shelter, healthcare, skills development, and
+                                support for people and families facing
+                                difficult circumstances.
                             </p>
 
                             <p>
-                                Started by{" "}
+                                The foundation's main branch is in{" "}
                                 <span
                                     className="
                                         font-semibold
                                         text-dark-900
                                     "
                                 >
-                                    Shadat Faridi
+                                    Muzaffarnagar, Uttar Pradesh
                                 </span>
-                                , the foundation dreams of building a small
-                                free school where every child gets the chance
-                                to learn.
+                                , with work and presence also in{" "}
+                                <span
+                                    className="
+                                        font-semibold
+                                        text-dark-900
+                                    "
+                                >
+                                    Tundla, Firozabad
+                                </span>
+                                .
+                            </p>
+
+                            <p>
+                                Founded by{" "}
+                                <span
+                                    className="
+                                        font-semibold
+                                        text-dark-900
+                                    "
+                                >
+                                    Shahadat
+                                </span>
+                                , Abdullah Foundation aims to make a
+                                meaningful difference in the lives of those
+                                who need support the most.
                             </p>
                         </div>
 
@@ -368,6 +391,7 @@ function About() {
                                 sm:grid-cols-2
                             "
                         >
+
                             {/* Education Card */}
 
                             <div
@@ -427,7 +451,7 @@ function About() {
                                         text-dark-900
                                     "
                                 >
-                                    Education First
+                                    Free Education
                                 </h4>
 
                                 <p
@@ -438,8 +462,9 @@ function About() {
                                         text-slate-500
                                     "
                                 >
-                                    Helping children access learning,
-                                    books, and essential educational support.
+                                    Supporting children with free education,
+                                    useful books, clothing, and opportunities
+                                    to learn.
                                 </p>
                             </div>
 
@@ -502,7 +527,7 @@ function About() {
                                         text-dark-900
                                     "
                                 >
-                                    With Dignity
+                                    Food, Shelter & Care
                                 </h4>
 
                                 <p
@@ -513,11 +538,39 @@ function About() {
                                         text-slate-500
                                     "
                                 >
-                                    Creating a caring environment where
-                                    every child feels valued and supported.
+                                    Helping families and children with food,
+                                    shelter, healthcare, and compassionate
+                                    support.
                                 </p>
                             </div>
                         </div>
+
+                        {/* Mission Highlight */}
+
+                        <div
+                            className="
+                                mt-6
+                                rounded-2xl
+                                border
+                                border-primary-100
+                                bg-primary-50
+                                px-5
+                                py-4
+                            "
+                        >
+                            <p
+                                className="
+                                    text-sm
+                                    font-semibold
+                                    leading-6
+                                    text-primary-800
+                                "
+                            >
+                                Mission: Free Education, Food & Shelter
+                                for 150 Poor Children.
+                            </p>
+                        </div>
+
                     </div>
                 </div>
             </Container>
