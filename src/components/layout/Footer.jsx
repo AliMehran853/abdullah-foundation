@@ -192,6 +192,22 @@ function Footer() {
                             healthcare, skills, and compassionate care.
                         </p>
 
+                        {/* Founder */}
+
+                        <p
+                            className="
+                                mt-4
+                                text-sm
+                                font-semibold
+                                text-slate-300
+                            "
+                        >
+                            Founded by{" "}
+                            <span className="text-white">
+                                Shahadat Faridi
+                            </span>
+                        </p>
+
                         {/* Mission Quote */}
 
                         <div
@@ -228,7 +244,7 @@ function Footer() {
                                 "
                             >
                                 Free Education, Food & Shelter
-                                for 150 Poor Children.
+                                for 150+ underprivileged children.
                             </p>
 
                         </div>
