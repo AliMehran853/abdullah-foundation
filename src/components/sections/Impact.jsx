@@ -13,10 +13,10 @@ function Impact() {
     const impactItems = [
         {
             id: 1,
-            number: "150",
+            number: "150+",
             label: "Poor Children",
             description:
-                "Our mission focuses on providing free education, food, shelter, and essential support for 150 poor children.",
+                "Our mission focuses on providing free education, food, shelter, and essential support for 150+ poor children.",
             icon: Users,
             color: "primary",
         },

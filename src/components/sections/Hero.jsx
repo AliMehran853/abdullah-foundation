@@ -232,7 +232,7 @@ function Hero() {
                                             text-dark-900
                                         "
                                     >
-                                        150
+                                        150+
                                     </p>
 
                                     <p
