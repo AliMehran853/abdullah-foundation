@@ -1,81 +1,73 @@
 import { useEffect, useState } from "react";
-import {
-    Menu,
-    X,
-    Heart,
-} from "lucide-react";
+import { Menu, X, Heart } from "lucide-react";
 
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import { navigation } from "../../data/navigation";
+import logo from "../../assets/logo/abdullah-foundation-logo.png";
 
-const WHATSAPP_DONATE_URL =
-    "https://wa.me/917088091108";
+const WHATSAPP_DONATE_URL = "https://wa.me/917088091108";
 
 function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [activeSection, setActiveSection] = useState("home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
-    /* =========================================================
+  /* =========================================================
        Close Mobile Menu
     ========================================================== */
 
-    const closeMenu = () => {
-        setIsMenuOpen(false);
-    };
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
-    /* =========================================================
+  /* =========================================================
        Detect Active Section
     ========================================================== */
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const headerOffset = 120;
+  useEffect(() => {
+    const handleScroll = () => {
+      const headerOffset = 120;
 
-            let currentSection = "home";
+      let currentSection = "home";
 
-            navigation.forEach((item) => {
-                const section = document.getElementById(item.id);
+      navigation.forEach((item) => {
+        const section = document.getElementById(item.id);
 
-                if (!section) return;
+        if (!section) return;
 
-                const sectionTop =
-                    section.getBoundingClientRect().top;
+        const sectionTop = section.getBoundingClientRect().top;
 
-                if (sectionTop <= headerOffset) {
-                    currentSection = item.id;
-                }
-            });
+        if (sectionTop <= headerOffset) {
+          currentSection = item.id;
+        }
+      });
 
-            setActiveSection(currentSection);
-        };
+      setActiveSection(currentSection);
+    };
 
-        handleScroll();
+    handleScroll();
 
-        window.addEventListener("scroll", handleScroll, {
-            passive: true,
-        });
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
 
-        return () => {
-            window.removeEventListener(
-                "scroll",
-                handleScroll
-            );
-        };
-    }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-    /* =========================================================
+  /* =========================================================
        Handle Navigation Click
     ========================================================== */
 
-    const handleNavigationClick = (item) => {
-        setActiveSection(item.id);
-        closeMenu();
-    };
+  const handleNavigationClick = (item) => {
+    setActiveSection(item.id);
+    closeMenu();
+  };
 
-    return (
-        <header
-            className="
+  return (
+    <header
+      className="
                 sticky
                 top-0
                 z-50
@@ -84,105 +76,81 @@ function Header() {
                 bg-white/95
                 backdrop-blur-md
             "
-        >
-            <Container>
-                <div className="flex h-18 items-center justify-between">
-
-                    {/* =================================================
+    >
+      <Container>
+        <div className="flex h-18 items-center justify-between">
+          {/* =================================================
                         Logo
                     ================================================== */}
 
-                    <a
-                        href="#home"
-                        onClick={() => {
-                            setActiveSection("home");
-                            closeMenu();
-                        }}
-                        className="
+          <a
+            href="#home"
+            onClick={() => {
+              setActiveSection("home");
+              closeMenu();
+            }}
+            className="
                             group
                             flex
                             items-center
                             gap-3
                         "
-                    >
-                        <div
-                            className="
-                                flex
-                                h-11
-                                w-11
-                                shrink-0
-                                items-center
-                                justify-center
-                                rounded-full
-                                bg-primary-700
-                                text-lg
-                                font-bold
-                                text-white
-                                shadow-sm
-                                transition-all
-                                duration-300
-                                group-hover:scale-105
-                                group-hover:shadow-md
-                            "
-                        >
-                            AF
-                        </div>
-
-                        <div className="hidden sm:block">
-                            <p
-                                className="
-                                    text-base
-                                    font-bold
-                                    leading-tight
-                                    text-primary-700
+          >
+            <div
+              className="
+        flex
+        h-11
+        w-auto
+        shrink-0
+        items-center
+        justify-center
+        overflow-hidden
+        rounded-md
+        border
+        border-slate-200
+        bg-white
+        shadow-sm
+        transition-all
+        duration-300
+        group-hover:scale-105
+        group-hover:shadow-md
+    "
+            >
+              <img
+                src={logo}
+                alt="Abdullah Foundation"
+                className="
+                                    h-11
+                                    w-11
+                                    object-contain
                                 "
-                            >
-                                Abdullah Foundation
-                            </p>
+              />
+            </div>
+          </a>
 
-                            <p
-                                className="
-                                    mt-0.5
-                                    text-[11px]
-                                    font-medium
-                                    text-slate-500
-                                "
-                            >
-                                Serving Humanity
-                            </p>
-                        </div>
-                    </a>
-
-                    {/* =================================================
+          {/* =================================================
                         Desktop Navigation
                     ================================================== */}
 
-                    <nav
-                        aria-label="Main navigation"
-                        className="
+          <nav
+            aria-label="Main navigation"
+            className="
                             hidden
                             items-center
                             gap-7
                             lg:flex
                         "
-                    >
-                        {navigation.map((item) => {
-                            const isActive =
-                                activeSection === item.id;
+          >
+            {navigation.map((item) => {
+              const isActive = activeSection === item.id;
 
-                            return (
-                                <a
-                                    key={item.id}
-                                    href={item.href}
-                                    onClick={() =>
-                                        handleNavigationClick(item)
-                                    }
-                                    aria-current={
-                                        isActive
-                                            ? "location"
-                                            : undefined
-                                    }
-                                    className={`
+              return (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  onClick={() => handleNavigationClick(item)}
+                  aria-current={isActive ? "location" : undefined}
+                  className={`
                                         relative
                                         py-2
                                         text-sm
@@ -191,9 +159,9 @@ function Header() {
                                         duration-300
 
                                         ${
-                                            isActive
-                                                ? "text-primary-700"
-                                                : "text-slate-700 hover:text-primary-700"
+                                          isActive
+                                            ? "text-primary-700"
+                                            : "text-slate-700 hover:text-primary-700"
                                         }
 
                                         after:absolute
@@ -206,50 +174,46 @@ function Header() {
                                         after:duration-300
 
                                         ${
-                                            isActive
-                                                ? "after:w-full"
-                                                : "after:w-0 hover:after:w-full"
+                                          isActive
+                                            ? "after:w-full"
+                                            : "after:w-0 hover:after:w-full"
                                         }
                                     `}
-                                >
-                                    {item.label}
-                                </a>
-                            );
-                        })}
-                    </nav>
+                >
+                  {item.label}
+                </a>
+              );
+            })}
+          </nav>
 
-                    {/* =================================================
+          {/* =================================================
                         Desktop Donate Button
                     ================================================== */}
 
-                    <div className="hidden lg:block">
-                        <Button
-                            href={WHATSAPP_DONATE_URL}
-                            variant="accent"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <Heart size={17} />
-                            Donate Now
-                        </Button>
-                    </div>
+          <div className="hidden lg:block">
+            <Button
+              href={WHATSAPP_DONATE_URL}
+              variant="accent"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Heart size={17} />
+              Donate Now
+            </Button>
+          </div>
 
-                    {/* =================================================
+          {/* =================================================
                         Mobile Menu Button
                     ================================================== */}
 
-                    <button
-                        type="button"
-                        onClick={() =>
-                            setIsMenuOpen((prev) => !prev)
-                        }
-                        aria-label={
-                            isMenuOpen
-                                ? "Close navigation menu"
-                                : "Open navigation menu"
-                        }
-                        aria-expanded={isMenuOpen}
-                        className="
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            aria-label={
+              isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+            }
+            aria-expanded={isMenuOpen}
+            className="
                             flex
                             h-10
                             w-10
@@ -266,22 +230,18 @@ function Header() {
                             focus-visible:ring-primary-700
                             lg:hidden
                         "
-                    >
-                        {isMenuOpen ? (
-                            <X size={24} />
-                        ) : (
-                            <Menu size={24} />
-                        )}
-                    </button>
-                </div>
-            </Container>
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </Container>
 
-            {/* =========================================================
+      {/* =========================================================
                 Mobile Navigation
             ========================================================== */}
 
-            <div
-                className={`
+      <div
+        className={`
                     overflow-hidden
                     border-t
                     border-slate-100
@@ -291,34 +251,24 @@ function Header() {
                     lg:hidden
 
                     ${
-                        isMenuOpen
-                            ? "max-h-[500px] opacity-100"
-                            : "max-h-0 opacity-0"
+                      isMenuOpen
+                        ? "max-h-[500px] opacity-100"
+                        : "max-h-0 opacity-0"
                     }
                 `}
-            >
-                <Container>
-                    <nav
-                        aria-label="Mobile navigation"
-                        className="flex flex-col py-4"
-                    >
-                        {navigation.map((item) => {
-                            const isActive =
-                                activeSection === item.id;
+      >
+        <Container>
+          <nav aria-label="Mobile navigation" className="flex flex-col py-4">
+            {navigation.map((item) => {
+              const isActive = activeSection === item.id;
 
-                            return (
-                                <a
-                                    key={item.id}
-                                    href={item.href}
-                                    onClick={() =>
-                                        handleNavigationClick(item)
-                                    }
-                                    aria-current={
-                                        isActive
-                                            ? "location"
-                                            : undefined
-                                    }
-                                    className={`
+              return (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  onClick={() => handleNavigationClick(item)}
+                  aria-current={isActive ? "location" : undefined}
+                  className={`
                                         relative
                                         rounded-lg
                                         px-3
@@ -329,57 +279,57 @@ function Header() {
                                         duration-200
 
                                         ${
-                                            isActive
-                                                ? "bg-primary-50 text-primary-700"
-                                                : "text-slate-700 hover:bg-slate-50 hover:text-primary-700"
+                                          isActive
+                                            ? "bg-primary-50 text-primary-700"
+                                            : "text-slate-700 hover:bg-slate-50 hover:text-primary-700"
                                         }
                                     `}
-                                >
-                                    <span className="flex items-center gap-2">
-                                        {isActive && (
-                                            <span
-                                                className="
+                >
+                  <span className="flex items-center gap-2">
+                    {isActive && (
+                      <span
+                        className="
                                                     h-1.5
                                                     w-1.5
                                                     rounded-full
                                                     bg-accent-500
                                                 "
-                                            />
-                                        )}
+                      />
+                    )}
 
-                                        {item.label}
-                                    </span>
-                                </a>
-                            );
-                        })}
+                    {item.label}
+                  </span>
+                </a>
+              );
+            })}
 
-                        {/* Mobile Donate */}
+            {/* Mobile Donate */}
 
-                        <div
-                            className="
+            <div
+              className="
                                 mt-3
                                 border-t
                                 border-slate-100
                                 pt-4
                             "
-                        >
-                            <Button
-                                href={WHATSAPP_DONATE_URL}
-                                variant="accent"
-                                className="w-full"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={closeMenu}
-                            >
-                                <Heart size={17} />
-                                Donate Now
-                            </Button>
-                        </div>
-                    </nav>
-                </Container>
+            >
+              <Button
+                href={WHATSAPP_DONATE_URL}
+                variant="accent"
+                className="w-full"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMenu}
+              >
+                <Heart size={17} />
+                Donate Now
+              </Button>
             </div>
-        </header>
-    );
+          </nav>
+        </Container>
+      </div>
+    </header>
+  );
 }
 
 export default Header;
