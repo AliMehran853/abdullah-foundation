@@ -1,73 +1,185 @@
-import { useEffect, useState } from "react";
-import { Menu, X, Heart } from "lucide-react";
+import {
+    useEffect,
+    useState,
+} from "react";
+
+import {
+    Link,
+    useLocation,
+    useNavigate,
+} from "react-router-dom";
+
+import {
+    Menu,
+    X,
+    Heart,
+} from "lucide-react";
 
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import { navigation } from "../../data/navigation";
+
 import logo from "../../assets/logo/abdullah-foundation-logo.png";
 
-const WHATSAPP_DONATE_URL = "https://wa.me/917088091108";
+const WHATSAPP_DONATE_URL =
+    "https://wa.me/917088091108";
 
 function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+    const location = useLocation();
+    const navigate = useNavigate();
 
-  /* =========================================================
+    const [isMenuOpen, setIsMenuOpen] =
+        useState(false);
+
+    const [activeSection, setActiveSection] =
+        useState(
+            location.pathname === "/"
+                ? "home"
+                : ""
+        );
+
+    /* =========================================================
        Close Mobile Menu
     ========================================================== */
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
 
-  /* =========================================================
-       Detect Active Section
+    /* =========================================================
+       Scroll To Section
     ========================================================== */
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const headerOffset = 120;
-
-      let currentSection = "home";
-
-      navigation.forEach((item) => {
-        const section = document.getElementById(item.id);
+    const scrollToSection = (sectionId) => {
+        const section =
+            document.getElementById(sectionId);
 
         if (!section) return;
 
-        const sectionTop = section.getBoundingClientRect().top;
-
-        if (sectionTop <= headerOffset) {
-          currentSection = item.id;
-        }
-      });
-
-      setActiveSection(currentSection);
+        requestAnimationFrame(() => {
+            section.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        });
     };
 
-    handleScroll();
-
-    window.addEventListener("scroll", handleScroll, {
-      passive: true,
-    });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  /* =========================================================
-       Handle Navigation Click
+    /* =========================================================
+       Handle Home + Section Navigation
     ========================================================== */
 
-  const handleNavigationClick = (item) => {
-    setActiveSection(item.id);
-    closeMenu();
-  };
+    const handleSectionNavigation = (
+        event,
+        item
+    ) => {
+        event.preventDefault();
 
-  return (
-    <header
-      className="
+        closeMenu();
+        setActiveSection(item.id);
+
+        /*
+            Already on Home:
+            Just smooth-scroll to the section.
+        */
+        if (location.pathname === "/") {
+            scrollToSection(item.id);
+            return;
+        }
+
+        /*
+            On a legal page:
+            Navigate to Home with the target hash.
+
+            Example:
+            /privacy-policy
+            →
+            /#gallery
+        */
+        navigate(`/#${item.id}`);
+    };
+
+    /* =========================================================
+       Detect Active Section
+    ========================================================== */
+
+    useEffect(() => {
+        if (location.pathname !== "/") {
+            setActiveSection("");
+            return;
+        }
+
+        const handleScroll = () => {
+            const headerOffset = 120;
+
+            let currentSection = "home";
+
+            navigation.forEach((item) => {
+                const section =
+                    document.getElementById(item.id);
+
+                if (!section) return;
+
+                const sectionTop =
+                    section.getBoundingClientRect().top;
+
+                if (sectionTop <= headerOffset) {
+                    currentSection = item.id;
+                }
+            });
+
+            setActiveSection(currentSection);
+        };
+
+        handleScroll();
+
+        window.addEventListener(
+            "scroll",
+            handleScroll,
+            {
+                passive: true,
+            }
+        );
+
+        return () => {
+            window.removeEventListener(
+                "scroll",
+                handleScroll
+            );
+        };
+    }, [location.pathname]);
+
+    /* =========================================================
+       Handle Target Hash After Returning To Home
+    ========================================================== */
+
+    useEffect(() => {
+        if (
+            location.pathname !== "/" ||
+            !location.hash
+        ) {
+            return;
+        }
+
+        const sectionId =
+            location.hash.substring(1);
+
+        /*
+            Wait until Home has rendered,
+            then scroll to the requested section.
+        */
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                scrollToSection(sectionId);
+            });
+        });
+    }, [
+        location.pathname,
+        location.hash,
+    ]);
+
+    return (
+        <header
+            className="
                 sticky
                 top-0
                 z-50
@@ -76,81 +188,94 @@ function Header() {
                 bg-white/95
                 backdrop-blur-md
             "
-    >
-      <Container>
-        <div className="flex h-18 items-center justify-between">
-          {/* =================================================
+        >
+            <Container>
+
+                <div className="flex h-18 items-center justify-between">
+
+                    {/* =================================================
                         Logo
                     ================================================== */}
 
-          <a
-            href="#home"
-            onClick={() => {
-              setActiveSection("home");
-              closeMenu();
-            }}
-            className="
+                    <Link
+                        to="/"
+                        onClick={() => {
+                            closeMenu();
+                            setActiveSection("home");
+                        }}
+                        className="
                             group
                             flex
                             items-center
                             gap-3
                         "
-          >
-            <div
-              className="
-        flex
-        h-11
-        w-auto
-        shrink-0
-        items-center
-        justify-center
-        overflow-hidden
-        rounded-md
-        border
-        border-slate-200
-        bg-white
-        shadow-sm
-        transition-all
-        duration-300
-        group-hover:scale-105
-        group-hover:shadow-md
-    "
-            >
-              <img
-                src={logo}
-                alt="Abdullah Foundation"
-                className="
+                    >
+                        <div
+                            className="
+                                flex
+                                h-11
+                                w-auto
+                                shrink-0
+                                items-center
+                                justify-center
+                                overflow-hidden
+                                rounded-md
+                                border
+                                border-slate-200
+                                bg-white
+                                shadow-sm
+                                transition-all
+                                duration-300
+                                group-hover:scale-105
+                                group-hover:shadow-md
+                            "
+                        >
+                            <img
+                                src={logo}
+                                alt="Abdullah Foundation"
+                                className="
                                     h-11
                                     w-11
                                     object-contain
                                 "
-              />
-            </div>
-          </a>
+                            />
+                        </div>
+                    </Link>
 
-          {/* =================================================
+                    {/* =================================================
                         Desktop Navigation
                     ================================================== */}
 
-          <nav
-            aria-label="Main navigation"
-            className="
+                    <nav
+                        aria-label="Main navigation"
+                        className="
                             hidden
                             items-center
                             gap-7
                             lg:flex
                         "
-          >
-            {navigation.map((item) => {
-              const isActive = activeSection === item.id;
+                    >
+                        {navigation.map((item) => {
+                            const isActive =
+                                activeSection ===
+                                item.id;
 
-              return (
-                <a
-                  key={item.id}
-                  href={item.href}
-                  onClick={() => handleNavigationClick(item)}
-                  aria-current={isActive ? "location" : undefined}
-                  className={`
+                            return (
+                                <Link
+                                    key={item.id}
+                                    to={`/#${item.id}`}
+                                    onClick={(event) =>
+                                        handleSectionNavigation(
+                                            event,
+                                            item
+                                        )
+                                    }
+                                    aria-current={
+                                        isActive
+                                            ? "location"
+                                            : undefined
+                                    }
+                                    className={`
                                         relative
                                         py-2
                                         text-sm
@@ -159,9 +284,9 @@ function Header() {
                                         duration-300
 
                                         ${
-                                          isActive
-                                            ? "text-primary-700"
-                                            : "text-slate-700 hover:text-primary-700"
+                                            isActive
+                                                ? "text-primary-700"
+                                                : "text-slate-700 hover:text-primary-700"
                                         }
 
                                         after:absolute
@@ -174,46 +299,57 @@ function Header() {
                                         after:duration-300
 
                                         ${
-                                          isActive
-                                            ? "after:w-full"
-                                            : "after:w-0 hover:after:w-full"
+                                            isActive
+                                                ? "after:w-full"
+                                                : "after:w-0 hover:after:w-full"
                                         }
                                     `}
-                >
-                  {item.label}
-                </a>
-              );
-            })}
-          </nav>
+                                >
+                                    {item.label}
+                                </Link>
+                            );
+                        })}
+                    </nav>
 
-          {/* =================================================
-                        Desktop Donate Button
+                    {/* =================================================
+                        Desktop Donate
                     ================================================== */}
 
-          <div className="hidden lg:block">
-            <Button
-              href={WHATSAPP_DONATE_URL}
-              variant="accent"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Heart size={17} />
-              Donate Now
-            </Button>
-          </div>
+                    <div className="hidden lg:block">
 
-          {/* =================================================
+                        <Button
+                            href={WHATSAPP_DONATE_URL}
+                            variant="accent"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Heart size={17} />
+
+                            Donate Now
+                        </Button>
+
+                    </div>
+
+                    {/* =================================================
                         Mobile Menu Button
                     ================================================== */}
 
-          <button
-            type="button"
-            onClick={() => setIsMenuOpen((prev) => !prev)}
-            aria-label={
-              isMenuOpen ? "Close navigation menu" : "Open navigation menu"
-            }
-            aria-expanded={isMenuOpen}
-            className="
+                    <button
+                        type="button"
+                        onClick={() =>
+                            setIsMenuOpen(
+                                (prev) => !prev
+                            )
+                        }
+                        aria-label={
+                            isMenuOpen
+                                ? "Close navigation menu"
+                                : "Open navigation menu"
+                        }
+                        aria-expanded={
+                            isMenuOpen
+                        }
+                        className="
                             flex
                             h-10
                             w-10
@@ -230,18 +366,23 @@ function Header() {
                             focus-visible:ring-primary-700
                             lg:hidden
                         "
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </Container>
+                    >
+                        {isMenuOpen ? (
+                            <X size={24} />
+                        ) : (
+                            <Menu size={24} />
+                        )}
+                    </button>
 
-      {/* =========================================================
+                </div>
+            </Container>
+
+            {/* =========================================================
                 Mobile Navigation
             ========================================================== */}
 
-      <div
-        className={`
+            <div
+                className={`
                     overflow-hidden
                     border-t
                     border-slate-100
@@ -251,24 +392,44 @@ function Header() {
                     lg:hidden
 
                     ${
-                      isMenuOpen
-                        ? "max-h-[500px] opacity-100"
-                        : "max-h-0 opacity-0"
+                        isMenuOpen
+                            ? "max-h-[500px] opacity-100"
+                            : "max-h-0 opacity-0"
                     }
                 `}
-      >
-        <Container>
-          <nav aria-label="Mobile navigation" className="flex flex-col py-4">
-            {navigation.map((item) => {
-              const isActive = activeSection === item.id;
+            >
+                <Container>
 
-              return (
-                <a
-                  key={item.id}
-                  href={item.href}
-                  onClick={() => handleNavigationClick(item)}
-                  aria-current={isActive ? "location" : undefined}
-                  className={`
+                    <nav
+                        aria-label="Mobile navigation"
+                        className="
+                            flex
+                            flex-col
+                            py-4
+                        "
+                    >
+
+                        {navigation.map((item) => {
+                            const isActive =
+                                activeSection ===
+                                item.id;
+
+                            return (
+                                <Link
+                                    key={item.id}
+                                    to={`/#${item.id}`}
+                                    onClick={(event) =>
+                                        handleSectionNavigation(
+                                            event,
+                                            item
+                                        )
+                                    }
+                                    aria-current={
+                                        isActive
+                                            ? "location"
+                                            : undefined
+                                    }
+                                    className={`
                                         relative
                                         rounded-lg
                                         px-3
@@ -279,57 +440,63 @@ function Header() {
                                         duration-200
 
                                         ${
-                                          isActive
-                                            ? "bg-primary-50 text-primary-700"
-                                            : "text-slate-700 hover:bg-slate-50 hover:text-primary-700"
+                                            isActive
+                                                ? "bg-primary-50 text-primary-700"
+                                                : "text-slate-700 hover:bg-slate-50 hover:text-primary-700"
                                         }
                                     `}
-                >
-                  <span className="flex items-center gap-2">
-                    {isActive && (
-                      <span
-                        className="
+                                >
+                                    <span className="flex items-center gap-2">
+
+                                        {isActive && (
+                                            <span
+                                                className="
                                                     h-1.5
                                                     w-1.5
                                                     rounded-full
                                                     bg-accent-500
                                                 "
-                      />
-                    )}
+                                            />
+                                        )}
 
-                    {item.label}
-                  </span>
-                </a>
-              );
-            })}
+                                        {item.label}
 
-            {/* Mobile Donate */}
+                                    </span>
+                                </Link>
+                            );
+                        })}
 
-            <div
-              className="
+                        {/* Mobile Donate */}
+
+                        <div
+                            className="
                                 mt-3
                                 border-t
                                 border-slate-100
                                 pt-4
                             "
-            >
-              <Button
-                href={WHATSAPP_DONATE_URL}
-                variant="accent"
-                className="w-full"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMenu}
-              >
-                <Heart size={17} />
-                Donate Now
-              </Button>
+                        >
+                            <Button
+                                href={WHATSAPP_DONATE_URL}
+                                variant="accent"
+                                className="w-full"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={
+                                    closeMenu
+                                }
+                            >
+                                <Heart size={17} />
+
+                                Donate Now
+                            </Button>
+                        </div>
+
+                    </nav>
+                </Container>
             </div>
-          </nav>
-        </Container>
-      </div>
-    </header>
-  );
+        </header>
+    );
 }
 
 export default Header;

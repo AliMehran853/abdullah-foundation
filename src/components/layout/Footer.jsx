@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 
 import Container from "../ui/Container";
+import { Link, useLocation } from "react-router-dom";
 
 const WHATSAPP_DONATE_URL =
     "https://wa.me/917088091108";
@@ -14,32 +15,80 @@ const WHATSAPP_DONATE_URL =
 const UPI_PHONE = "7088091108";
 
 function Footer() {
+    const location = useLocation();
+
     const quickLinks = [
         {
             label: "Home",
-            href: "#home",
+            href: "/#home",
+            sectionId: "home",
         },
         {
             label: "About",
-            href: "#about",
+            href: "/#about",
+            sectionId: "about",
         },
         {
             label: "Our Work",
-            href: "#work",
+            href: "/#work",
+            sectionId: "work",
         },
         {
             label: "Impact",
-            href: "#impact",
+            href: "/#impact",
+            sectionId: "impact",
         },
         {
             label: "Gallery",
-            href: "#gallery",
+            href: "/#gallery",
+            sectionId: "gallery",
         },
         {
             label: "Contact",
-            href: "#contact",
+            href: "/#contact",
+            sectionId: "contact",
         },
     ];
+
+    const legalLinks = [
+        {
+            label: "Privacy Policy",
+            href: "/privacy-policy",
+        },
+        {
+            label: "Terms of Service",
+            href: "/terms-of-service",
+        },
+        {
+            label: "Transparency & Accountability",
+            href: "/transparency",
+        },
+    ];
+
+    const handleSectionClick = (
+        event,
+        sectionId
+    ) => {
+        if (location.pathname !== "/") {
+            return;
+        }
+
+        event.preventDefault();
+
+        const section =
+            document.getElementById(
+                sectionId
+            );
+
+        if (!section) return;
+
+        requestAnimationFrame(() => {
+            section.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        });
+    };
 
     return (
         <footer
@@ -99,9 +148,11 @@ function Footer() {
                         grid
                         gap-12
                         py-14
+
                         sm:py-16
-                        lg:grid-cols-[1.4fr_0.7fr_1fr]
-                        lg:gap-16
+
+                        lg:grid-cols-[1.25fr_0.75fr_0.9fr_1fr]
+                        lg:gap-12
                         lg:py-20
                     "
                 >
@@ -115,12 +166,18 @@ function Footer() {
                         {/* Logo */}
 
                         <a
-                            href="#home"
+                            href="/#home"
+                            onClick={(event) =>
+                                handleSectionClick(
+                                    event,
+                                    "home"
+                                )
+                            }
                             className="
+                                group
                                 inline-flex
                                 items-center
                                 gap-3
-                                group
                             "
                         >
 
@@ -274,6 +331,12 @@ function Footer() {
 
                                     <a
                                         href={link.href}
+                                        onClick={(event) =>
+                                            handleSectionClick(
+                                                event,
+                                                link.sectionId
+                                            )
+                                        }
                                         className="
                                             group
                                             inline-flex
@@ -304,6 +367,71 @@ function Footer() {
                                         />
 
                                     </a>
+
+                                </li>
+                            ))}
+
+                        </ul>
+
+                    </div>
+
+                    {/* =================================================
+                        Legal Links
+                    ================================================== */}
+
+                    <div>
+
+                        <h3
+                            className="
+                                text-sm
+                                font-bold
+                                text-white
+                            "
+                        >
+                            Legal
+                        </h3>
+
+                        <ul className="mt-5 space-y-3">
+
+                            {legalLinks.map((link) => (
+                                <li key={link.href}>
+
+                                    <Link
+                                        to={link.href}
+                                        className="
+                                            group
+                                            inline-flex
+                                            max-w-full
+                                            items-start
+                                            gap-2
+                                            text-sm
+                                            leading-5
+                                            text-slate-400
+                                            transition-colors
+                                            duration-300
+                                            hover:text-white
+                                        "
+                                    >
+
+                                        <span>
+                                            {link.label}
+                                        </span>
+
+                                        <ArrowUpRight
+                                            size={14}
+                                            className="
+                                                mt-0.5
+                                                shrink-0
+                                                opacity-0
+                                                -translate-x-1
+                                                transition-all
+                                                duration-300
+                                                group-hover:translate-x-0
+                                                group-hover:opacity-100
+                                            "
+                                        />
+
+                                    </Link>
 
                                 </li>
                             ))}
@@ -376,7 +504,7 @@ function Footer() {
                             {/* Email */}
 
                             <a
-                                href="mailto:abdullahfoundationtundla@gmail.com"
+                                href="mailto:abdullahfoundationmzn@gmail.com"
                                 className="
                                     group
                                     flex
@@ -405,7 +533,7 @@ function Footer() {
                                         group-hover:text-white
                                     "
                                 >
-                                    abdullahfoundationtundla@gmail.com
+                                    abdullahfoundationmzn@gmail.com
                                 </span>
 
                             </a>
