@@ -4,16 +4,18 @@ import {
     MapPin,
     MessageCircle,
     Phone,
-    Send,
 } from "lucide-react";
 
 import Container from "../ui/Container";
 import SectionTitle from "../ui/SectionTitle";
 
 const WHATSAPP_URL =
-    "https://wa.me/917088091108";
+    "https://wa.me/917088091108?text=Assalamu%20Alaikum%2C%20I%20want%20to%20donate%20to%20Abdullah%20Foundation";
 
 const PHONE_NUMBER = "+91 7088091108";
+
+const OFFICIAL_EMAIL =
+    "abdullahfoundationmzn@gmail.com";
 
 function Contact() {
     return (
@@ -311,14 +313,13 @@ function Contact() {
                                     {/* Email */}
 
                                     <a
-                                        href="mailto:abdullahfoundationtundla@gmail.com"
+                                        href={`mailto:${OFFICIAL_EMAIL}`}
                                         className="
                                             group
                                             flex
                                             gap-4
                                         "
                                     >
-
                                         <div
                                             className="
                                                 flex
@@ -361,11 +362,10 @@ function Contact() {
                                                     group-hover:text-orange-300
                                                 "
                                             >
-                                                abdullahfoundationtundla@gmail.com
+                                                {OFFICIAL_EMAIL}
                                             </p>
 
                                         </div>
-
                                     </a>
 
                                     {/* WhatsApp */}
@@ -380,7 +380,6 @@ function Contact() {
                                             gap-4
                                         "
                                     >
-
                                         <div
                                             className="
                                                 flex
@@ -426,7 +425,6 @@ function Contact() {
                                             </p>
 
                                         </div>
-
                                     </a>
 
                                 </div>
@@ -536,7 +534,7 @@ function Contact() {
                                 {/* Email */}
 
                                 <a
-                                    href="mailto:abdullahfoundationtundla@gmail.com"
+                                    href={`mailto:${OFFICIAL_EMAIL}`}
                                     className="
                                         group
                                         rounded-2xl
@@ -552,7 +550,6 @@ function Contact() {
                                         hover:shadow-[0_15px_35px_rgba(15,23,42,0.06)]
                                     "
                                 >
-
                                     <div
                                         className="
                                             flex
@@ -606,7 +603,7 @@ function Contact() {
                                             text-slate-500
                                         "
                                     >
-                                        abdullahfoundationtundla@gmail.com
+                                        {OFFICIAL_EMAIL}
                                     </p>
 
                                 </a>
@@ -632,7 +629,6 @@ function Contact() {
                                         hover:shadow-[0_15px_35px_rgba(15,23,42,0.06)]
                                     "
                                 >
-
                                     <div
                                         className="
                                             flex
@@ -746,7 +742,6 @@ function Contact() {
                                         px-6
                                     "
                                 >
-
                                     <div className="text-center">
 
                                         <div
@@ -801,9 +796,7 @@ function Contact() {
                                         </p>
 
                                     </div>
-
                                 </div>
-
                             </div>
 
                             {/* =================================================
@@ -832,7 +825,6 @@ function Contact() {
                                     hover:bg-accent-50
                                 "
                             >
-
                                 <div
                                     className="
                                         flex
@@ -887,11 +879,9 @@ function Contact() {
                                         group-hover:translate-x-0.5
                                     "
                                 />
-
                             </a>
 
                         </div>
-
                     </div>
                 </div>
 

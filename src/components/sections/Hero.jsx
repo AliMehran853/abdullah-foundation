@@ -12,7 +12,7 @@ import Button from "../ui/Button";
 import heroImage from "../../assets/images/hero.webp";
 
 const WHATSAPP_DONATE_URL =
-    "https://wa.me/917088091108";
+    "https://wa.me/917088091108?text=Assalamu%20Alaikum%2C%20I%20want%20to%20donate%20to%20Abdullah%20Foundation";
 
 function Hero() {
     return (
@@ -24,8 +24,10 @@ function Hero() {
                 bg-white
                 pt-12
                 pb-20
+
                 sm:pt-16
                 sm:pb-24
+
                 lg:pt-20
                 lg:pb-28
             "
@@ -73,6 +75,7 @@ function Hero() {
                         grid
                         items-center
                         gap-12
+
                         lg:grid-cols-2
                         lg:gap-16
                     "
@@ -147,6 +150,7 @@ function Hero() {
                                 text-base
                                 leading-8
                                 text-slate-600
+
                                 sm:text-lg
                             "
                         >
@@ -164,6 +168,7 @@ function Hero() {
                                 flex
                                 flex-col
                                 gap-3
+
                                 sm:flex-row
                             "
                         >
@@ -252,6 +257,7 @@ function Hero() {
                                     h-8
                                     w-px
                                     bg-slate-200
+
                                     sm:block
                                 "
                             />
@@ -299,7 +305,7 @@ function Hero() {
                     </div>
 
                     {/* =================================================
-                        Hero Image
+                        Hero Image / Banner
                     ================================================== */}
 
                     <div className="relative">
@@ -343,71 +349,52 @@ function Hero() {
                             "
                         />
 
-                        {/* Image Frame */}
+                        {/* Banner Frame */}
 
                         <div
                             className="
                                 relative
                                 z-10
+                                flex
+                                min-h-[420px]
+                                items-center
+                                justify-center
                                 overflow-hidden
                                 rounded-[2rem]
                                 border
-                                border-white
-                                bg-slate-100
+                                border-slate-200
+                                bg-white
+                                p-2
                                 shadow-[0_25px_70px_rgba(15,23,42,0.14)]
+
+                                sm:min-h-[500px]
+                                sm:p-3
+
+                                lg:min-h-[560px]
+                                lg:p-4
                             "
                         >
                             <img
                                 src={heroImage}
-                                alt="Children supported by Abdullah Foundation"
+                                alt="Abdullah Foundation banner"
                                 loading="eager"
                                 className="
-                                    h-[420px]
+                                    h-full
+                                    max-h-[560px]
                                     w-full
+                                    rounded-[1.5rem]
                                     object-cover
+                                    object-center
 
-                                    brightness-[0.94]
-                                    saturate-[0.86]
-                                    contrast-[0.95]
+                                    sm:rounded-[1.75rem]
+
+                                    lg:rounded-[1.75rem]
 
                                     transition-transform
                                     duration-700
                                     ease-out
 
-                                    hover:scale-[1.025]
-
-                                    sm:h-[500px]
-                                    lg:h-[560px]
-                                "
-                            />
-
-                            {/* Soft Image Overlay */}
-
-                            <div
-                                aria-hidden="true"
-                                className="
-                                    pointer-events-none
-                                    absolute
-                                    inset-0
-                                    bg-gradient-to-t
-                                    from-slate-950/25
-                                    via-transparent
-                                    to-white/5
-                                "
-                            />
-
-                            {/* Soft Color Overlay */}
-
-                            <div
-                                aria-hidden="true"
-                                className="
-                                    pointer-events-none
-                                    absolute
-                                    inset-0
-                                    bg-gradient-to-tr
-                                    from-primary-900/8
-                                    via-transparent
-                                    to-accent-500/8
+                                    hover:scale-[1.01]
                                 "
                             />
                         </div>
