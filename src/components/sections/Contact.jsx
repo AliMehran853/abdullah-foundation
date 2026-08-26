@@ -10,12 +10,9 @@ import Container from "../ui/Container";
 import SectionTitle from "../ui/SectionTitle";
 
 const WHATSAPP_URL =
-    "https://wa.me/917088091108?text=Assalamu%20Alaikum%2C%20I%20want%20to%20donate%20to%20Abdullah%20Foundation";
+    "https://wa.me/917088091108";
 
 const PHONE_NUMBER = "+91 7088091108";
-
-const OFFICIAL_EMAIL =
-    "abdullahfoundationmzn@gmail.com";
 
 function Contact() {
     return (
@@ -310,64 +307,6 @@ function Contact() {
 
                                     </div>
 
-                                    {/* Email */}
-
-                                    <a
-                                        href={`mailto:${OFFICIAL_EMAIL}`}
-                                        className="
-                                            group
-                                            flex
-                                            gap-4
-                                        "
-                                    >
-                                        <div
-                                            className="
-                                                flex
-                                                h-10
-                                                w-10
-                                                shrink-0
-                                                items-center
-                                                justify-center
-                                                rounded-xl
-                                                bg-white/10
-                                                text-orange-300
-                                                transition-colors
-                                                duration-300
-                                                group-hover:bg-white/20
-                                            "
-                                        >
-                                            <Mail size={19} />
-                                        </div>
-
-                                        <div className="min-w-0">
-
-                                            <p
-                                                className="
-                                                    text-xs
-                                                    font-semibold
-                                                    text-blue-200
-                                                "
-                                            >
-                                                Email
-                                            </p>
-
-                                            <p
-                                                className="
-                                                    mt-1
-                                                    break-all
-                                                    text-sm
-                                                    text-white
-                                                    transition-colors
-                                                    duration-300
-                                                    group-hover:text-orange-300
-                                                "
-                                            >
-                                                {OFFICIAL_EMAIL}
-                                            </p>
-
-                                        </div>
-                                    </a>
-
                                     {/* WhatsApp */}
 
                                     <a
@@ -531,84 +470,6 @@ function Contact() {
 
                             <div className="mt-8 grid gap-4 sm:grid-cols-2">
 
-                                {/* Email */}
-
-                                <a
-                                    href={`mailto:${OFFICIAL_EMAIL}`}
-                                    className="
-                                        group
-                                        rounded-2xl
-                                        border
-                                        border-slate-200
-                                        bg-slate-50
-                                        p-5
-                                        transition-all
-                                        duration-300
-                                        hover:-translate-y-1
-                                        hover:border-primary-100
-                                        hover:bg-primary-50/50
-                                        hover:shadow-[0_15px_35px_rgba(15,23,42,0.06)]
-                                    "
-                                >
-
-                                    <div
-                                        className="
-                                            flex
-                                            h-11
-                                            w-11
-                                            items-center
-                                            justify-center
-                                            rounded-xl
-                                            bg-white
-                                            text-primary-700
-                                            shadow-sm
-                                            transition-transform
-                                            duration-300
-                                            group-hover:scale-105
-                                        "
-                                    >
-                                        <Mail size={20} />
-                                    </div>
-
-                                    <div className="mt-4 flex items-center gap-2">
-
-                                        <h4
-                                            className="
-                                                text-sm
-                                                font-bold
-                                                text-dark-900
-                                            "
-                                        >
-                                            Email Us
-                                        </h4>
-
-                                        <ArrowUpRight
-                                            size={15}
-                                            className="
-                                                text-slate-400
-                                                transition-transform
-                                                duration-300
-                                                group-hover:-translate-y-0.5
-                                                group-hover:translate-x-0.5
-                                            "
-                                        />
-
-                                    </div>
-
-                                    <p
-                                        className="
-                                            mt-2
-                                            break-all
-                                            text-xs
-                                            leading-5
-                                            text-slate-500
-                                        "
-                                    >
-                                        {OFFICIAL_EMAIL}
-                                    </p>
-
-                                </a>
-
                                 {/* WhatsApp */}
 
                                 <a
@@ -628,9 +489,9 @@ function Contact() {
                                         hover:border-accent-300
                                         hover:bg-accent-50
                                         hover:shadow-[0_15px_35px_rgba(15,23,42,0.06)]
+                                        sm:col-span-2
                                     "
                                 >
-
                                     <div
                                         className="
                                             flex

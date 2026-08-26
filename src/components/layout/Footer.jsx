@@ -1,7 +1,7 @@
 import {
     ArrowUpRight,
     Heart,
-    Mail,
+    Link as LinkIcon,
     MapPin,
     Phone,
 } from "lucide-react";
@@ -10,7 +10,10 @@ import Container from "../ui/Container";
 import { Link, useLocation } from "react-router-dom";
 
 const WHATSAPP_DONATE_URL =
-    "https://wa.me/917088091108?text=Assalamu%20Alaikum%2C%20I%20want%20to%20donate%20to%20Abdullah%20Foundation";
+    "https://wa.me/917088091108";
+
+const OFFICIAL_WEBSITE_URL =
+    "https://sites.google.com/view/abdullah-foundation/home";
 
 const UPI_PHONE = "7088091108";
 
@@ -283,6 +286,7 @@ function Footer() {
                     {/* Quick Links */}
 
                     <div>
+
                         <h3
                             className="
                                 text-sm
@@ -294,8 +298,10 @@ function Footer() {
                         </h3>
 
                         <ul className="mt-5 space-y-3">
+
                             {quickLinks.map((link) => (
                                 <li key={link.label}>
+
                                     <a
                                         href={link.href}
                                         onClick={(event) =>
@@ -332,14 +338,17 @@ function Footer() {
                                             "
                                         />
                                     </a>
+
                                 </li>
                             ))}
+
                         </ul>
                     </div>
 
                     {/* Legal Links */}
 
                     <div>
+
                         <h3
                             className="
                                 text-sm
@@ -351,8 +360,10 @@ function Footer() {
                         </h3>
 
                         <ul className="mt-5 space-y-3">
+
                             {legalLinks.map((link) => (
                                 <li key={link.href}>
+
                                     <Link
                                         to={link.href}
                                         className="
@@ -387,8 +398,10 @@ function Footer() {
                                             "
                                         />
                                     </Link>
+
                                 </li>
                             ))}
+
                         </ul>
                     </div>
 
@@ -408,7 +421,63 @@ function Footer() {
 
                         <div className="mt-5 space-y-4">
 
+                            {/* Official Website */}
+
+                            <a
+                                href={OFFICIAL_WEBSITE_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="
+                                    group
+                                    flex
+                                    items-start
+                                    gap-3
+                                "
+                            >
+                                <LinkIcon
+                                    size={18}
+                                    className="
+                                        mt-0.5
+                                        shrink-0
+                                        text-accent-500
+                                    "
+                                />
+
+                                <div className="min-w-0">
+                                    <p
+                                        className="
+                                            text-sm
+                                            text-slate-400
+                                            transition-colors
+                                            duration-300
+                                            group-hover:text-white
+                                        "
+                                    >
+                                        Official Website
+                                    </p>
+
+                                    <span
+                                        className="
+                                            mt-1
+                                            block
+                                            break-all
+                                            text-xs
+                                            leading-5
+                                            text-slate-500
+                                            transition-colors
+                                            duration-300
+                                            group-hover:text-slate-300
+                                        "
+                                    >
+                                        sites.google.com/view/abdullah-foundation/home
+                                    </span>
+                                </div>
+                            </a>
+
+                            {/* Main Location */}
+
                             <div className="flex items-start gap-3">
+
                                 <MapPin
                                     size={18}
                                     className="
@@ -439,40 +508,10 @@ function Footer() {
 
                                     Uttar Pradesh, India
                                 </p>
+
                             </div>
 
-                            <a
-                                href="mailto:abdullahfoundationmzn@gmail.com"
-                                className="
-                                    group
-                                    flex
-                                    items-start
-                                    gap-3
-                                "
-                            >
-                                <Mail
-                                    size={18}
-                                    className="
-                                        mt-0.5
-                                        shrink-0
-                                        text-accent-500
-                                    "
-                                />
-
-                                <span
-                                    className="
-                                        break-all
-                                        text-sm
-                                        leading-6
-                                        text-slate-400
-                                        transition-colors
-                                        duration-300
-                                        group-hover:text-white
-                                    "
-                                >
-                                    abdullahfoundationmzn@gmail.com
-                                </span>
-                            </a>
+                            {/* WhatsApp */}
 
                             <a
                                 href={WHATSAPP_DONATE_URL}
@@ -495,6 +534,7 @@ function Footer() {
                                 />
 
                                 <div>
+
                                     <p
                                         className="
                                             text-sm
@@ -524,10 +564,14 @@ function Footer() {
                                     >
                                         +91 7088091108
                                     </span>
+
                                 </div>
                             </a>
 
+                            {/* UPI / GPay / PhonePe */}
+
                             <div className="flex items-start gap-3">
+
                                 <Heart
                                     size={18}
                                     className="
@@ -538,6 +582,7 @@ function Footer() {
                                 />
 
                                 <div>
+
                                     <p
                                         className="
                                             text-sm
@@ -564,10 +609,13 @@ function Footer() {
                                     >
                                         {UPI_PHONE}
                                     </span>
+
                                 </div>
                             </div>
 
                         </div>
+
+                        {/* Donate */}
 
                         <a
                             href={WHATSAPP_DONATE_URL}

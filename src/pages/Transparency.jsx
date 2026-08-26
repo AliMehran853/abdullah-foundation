@@ -1,7 +1,6 @@
 import {
     CheckCircle2,
     FileCheck2,
-    Mail,
     MapPin,
     ShieldCheck,
 } from "lucide-react";
@@ -20,11 +19,13 @@ function Transparency() {
             "
         >
             <Container>
+
                 {/* =================================================
                     Page Header
                 ================================================== */}
 
                 <div className="mx-auto max-w-4xl">
+
                     <div
                         className="
                             inline-flex
@@ -102,9 +103,11 @@ function Transparency() {
                         lg:p-10
                     "
                 >
+
                     {/* 1. Legal Details */}
 
                     <section>
+
                         <h2
                             className="
                                 flex
@@ -230,6 +233,7 @@ function Transparency() {
                     {/* 2. Compliance */}
 
                     <section className="mt-10">
+
                         <h2
                             className="
                                 text-xl
@@ -242,12 +246,14 @@ function Transparency() {
                         </h2>
 
                         <ul className="mt-5 space-y-3">
+
                             {[
                                 "12A Registration: Applied For",
                                 "80G Registration: Applied For (Donors please provide PAN for future 80G benefit)",
                                 "FCRA Registration: Not Applied. We do NOT accept any foreign donations.",
                                 "CSR-1: Will be applied after 12A.",
                             ].map((item) => (
+
                                 <li
                                     key={item}
                                     className="
@@ -271,13 +277,16 @@ function Transparency() {
 
                                     <span>{item}</span>
                                 </li>
+
                             ))}
+
                         </ul>
                     </section>
 
                     {/* 3. Financials */}
 
                     <section className="mt-10">
+
                         <h2
                             className="
                                 text-xl
@@ -301,11 +310,13 @@ function Transparency() {
                             Annual audit reports will be published here
                             every year after filing.
                         </p>
+
                     </section>
 
                     {/* 4. Child Protection */}
 
                     <section className="mt-10">
+
                         <h2
                             className="
                                 text-xl
@@ -329,11 +340,13 @@ function Transparency() {
                             We do not discriminate on basis of religion,
                             caste, or gender.
                         </p>
+
                     </section>
 
                     {/* 5. Contact */}
 
                     <section className="mt-10">
+
                         <h2
                             className="
                                 text-xl
@@ -368,31 +381,9 @@ function Transparency() {
                             <p
                                 className="
                                     mt-3
-                                    flex
-                                    items-start
-                                    gap-2
-                                    text-sm
-                                    leading-6
-                                    text-slate-600
-                                "
-                            >
-                                <Mail
-                                    size={16}
-                                    className="
-                                        mt-1
-                                        shrink-0
-                                        text-primary-700
-                                    "
-                                />
-
-                                abdullahfoundationmzn@gmail.com
-                            </p>
-
-                            <p
-                                className="
-                                    mt-2
                                     text-sm
                                     font-medium
+                                    leading-6
                                     text-slate-600
                                 "
                             >
@@ -422,12 +413,15 @@ function Transparency() {
                                 Abdullah Foundation, Muzaffarnagar,
                                 UP - 251001
                             </p>
+
                         </div>
+
                     </section>
 
                     {/* 6. Domain & Security */}
 
                     <section className="mt-10">
+
                         <h2
                             className="
                                 text-xl
@@ -451,6 +445,7 @@ function Transparency() {
                             This site is hosted on Vercel with HTTPS and
                             uses only Razorpay for payments.
                         </p>
+
                     </section>
 
                     {/* Closing */}
@@ -466,6 +461,7 @@ function Transparency() {
                         "
                     >
                         <div className="flex items-start gap-3">
+
                             <ShieldCheck
                                 size={19}
                                 className="
@@ -486,8 +482,10 @@ function Transparency() {
                                 transparency, accountability, and responsible
                                 service to the community.
                             </p>
+
                         </div>
                     </div>
+
                 </article>
             </Container>
         </main>

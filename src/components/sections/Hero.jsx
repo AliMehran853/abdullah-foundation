@@ -12,7 +12,7 @@ import Button from "../ui/Button";
 import heroImage from "../../assets/images/hero.webp";
 
 const WHATSAPP_DONATE_URL =
-    "https://wa.me/917088091108?text=Assalamu%20Alaikum%2C%20I%20want%20to%20donate%20to%20Abdullah%20Foundation";
+    "https://wa.me/917088091108";
 
 function Hero() {
     return (

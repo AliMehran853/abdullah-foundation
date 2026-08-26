@@ -16,7 +16,7 @@ import SectionTitle from "../ui/SectionTitle";
 import upiQrImage from "../../assets/donation/abdullah-foundation-upi-qr.png";
 
 const WHATSAPP_DONATE_URL =
-    "https://wa.me/917088091108?text=Assalamu%20Alaikum%2C%20I%20want%20to%20donate%20to%20Abdullah%20Foundation";
+    "https://wa.me/917088091108";
 
 const UPI_PHONE = "7088091108";
 
@@ -48,10 +48,6 @@ function Donation() {
                 lg:py-28
             "
         >
-            {/* =====================================================
-                Background Decoration
-            ====================================================== */}
-
             <div
                 aria-hidden="true"
                 className="
@@ -92,10 +88,6 @@ function Donation() {
 
             <Container>
 
-                {/* =================================================
-                    Section Heading
-                ================================================== */}
-
                 <div className="relative z-10">
                     <SectionTitle
                         eyebrow="Support Abdullah Foundation"
@@ -103,10 +95,6 @@ function Donation() {
                         description="Your support can help provide free education, food, shelter, healthcare, and other essential support to children and families in need."
                     />
                 </div>
-
-                {/* =================================================
-                    Main Donation Card
-                ================================================== */}
 
                 <div
                     className="
@@ -128,10 +116,6 @@ function Donation() {
                 >
                     <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
 
-                        {/* =================================================
-                            LEFT - DONATION MESSAGE
-                        ================================================== */}
-
                         <div
                             className="
                                 relative
@@ -145,8 +129,6 @@ function Donation() {
                                 xl:p-14
                             "
                         >
-
-                            {/* Decorative circles */}
 
                             <div
                                 aria-hidden="true"
@@ -203,11 +185,7 @@ function Donation() {
                                 "
                             />
 
-                            {/* Content */}
-
                             <div className="relative z-10">
-
-                                {/* Icon */}
 
                                 <div
                                     className="
@@ -233,8 +211,6 @@ function Donation() {
                                     />
                                 </div>
 
-                                {/* Eyebrow */}
-
                                 <p
                                     className="
                                         mt-7
@@ -251,8 +227,6 @@ function Donation() {
                                 >
                                     Make A Difference
                                 </p>
-
-                                {/* Heading */}
 
                                 <h3
                                     className="
@@ -281,8 +255,6 @@ function Donation() {
                                     </span>
                                 </h3>
 
-                                {/* Description */}
-
                                 <p
                                     className="
                                         mt-5
@@ -301,10 +273,6 @@ function Donation() {
                                     underprivileged children and families
                                     with dignity and compassion.
                                 </p>
-
-                                {/* =================================================
-                                    What Your Support Helps With
-                                ================================================== */}
 
                                 <div
                                     className="
@@ -400,10 +368,6 @@ function Donation() {
                                     </div>
                                 </div>
 
-                                {/* =================================================
-                                    Trust Card
-                                ================================================== */}
-
                                 <div
                                     className="
                                         mt-8
@@ -470,10 +434,6 @@ function Donation() {
                             </div>
                         </div>
 
-                        {/* =================================================
-                            RIGHT - PAYMENT OPTIONS
-                        ================================================== */}
-
                         <div
                             className="
                                 bg-slate-50
@@ -484,10 +444,6 @@ function Donation() {
                                 xl:p-14
                             "
                         >
-
-                            {/* =================================================
-                                Payment Header
-                            ================================================== */}
 
                             <div className="text-center">
 
@@ -558,10 +514,6 @@ function Donation() {
                                 </p>
 
                             </div>
-
-                            {/* =================================================
-                                WhatsApp CARD
-                            ================================================== */}
 
                             <a
                                 href={WHATSAPP_DONATE_URL}
@@ -690,10 +642,6 @@ function Donation() {
                                 </div>
                             </a>
 
-                            {/* =================================================
-                                UPI / GPay / PhonePe CARD
-                            ================================================== */}
-
                             <div
                                 className="
                                     mt-5
@@ -781,8 +729,6 @@ function Donation() {
                                     </span>
                                 </div>
 
-                                {/* Payment Name */}
-
                                 <div
                                     className="
                                         mt-5
@@ -815,8 +761,6 @@ function Donation() {
                                         {PAYMENT_NAME}
                                     </p>
                                 </div>
-
-                                {/* UPI ID */}
 
                                 <div
                                     className="
@@ -892,8 +836,6 @@ function Donation() {
                                     </div>
                                 </div>
 
-                                {/* Mobile Number */}
-
                                 <div
                                     className="
                                         mt-3
@@ -956,10 +898,6 @@ function Donation() {
                                     before sending money.
                                 </p>
                             </div>
-
-                            {/* =================================================
-                                QR CODE CARD
-                            ================================================== */}
 
                             <div
                                 className="
@@ -1024,8 +962,6 @@ function Donation() {
                                     </div>
                                 </div>
 
-                                {/* QR Image */}
-
                                 <div
                                     className="
                                         mx-auto
@@ -1059,8 +995,6 @@ function Donation() {
                                         loading="lazy"
                                     />
                                 </div>
-
-                                {/* QR Name */}
 
                                 <div
                                     className="
@@ -1096,8 +1030,6 @@ function Donation() {
                                     </p>
                                 </div>
 
-                                {/* QR Notice */}
-
                                 <p
                                     className="
                                         mt-4
@@ -1127,10 +1059,6 @@ function Donation() {
                         </div>
                     </div>
                 </div>
-
-                {/* =================================================
-                    Bottom CTA
-                ================================================== */}
 
                 <div
                     className="

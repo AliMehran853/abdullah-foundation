@@ -1,7 +1,6 @@
 import {
     CheckCircle2,
     Cookie,
-    Mail,
     MapPin,
     ShieldCheck,
 } from "lucide-react";
@@ -20,6 +19,7 @@ function PrivacyPolicy() {
             "
         >
             <Container>
+
                 {/* =================================================
                     Page Header
                 ================================================== */}
@@ -30,6 +30,7 @@ function PrivacyPolicy() {
                         max-w-4xl
                     "
                 >
+
                     <div
                         className="
                             inline-flex
@@ -81,6 +82,7 @@ function PrivacyPolicy() {
                     >
                         Effective Date: 25 August 2026
                     </p>
+
                 </div>
 
                 {/* =================================================
@@ -103,6 +105,7 @@ function PrivacyPolicy() {
                         lg:p-10
                     "
                 >
+
                     {/* Introduction */}
 
                     <p
@@ -121,6 +124,7 @@ function PrivacyPolicy() {
                     {/* 1 */}
 
                     <section className="mt-10">
+
                         <h2
                             className="
                                 text-xl
@@ -133,6 +137,7 @@ function PrivacyPolicy() {
                         </h2>
 
                         <ul className="mt-4 space-y-3">
+
                             <li
                                 className="
                                     flex
@@ -158,12 +163,14 @@ function PrivacyPolicy() {
                                     receipt only), and Donation Amount.
                                 </span>
                             </li>
+
                         </ul>
                     </section>
 
                     {/* 2 */}
 
                     <section className="mt-10">
+
                         <h2
                             className="
                                 text-xl
@@ -188,11 +195,13 @@ function PrivacyPolicy() {
                             Number, CVV, UPI PIN, or Expiry. All payment data
                             is entered directly on Razorpay's secure page.
                         </p>
+
                     </section>
 
                     {/* 3 */}
 
                     <section className="mt-10">
+
                         <h2
                             className="
                                 text-xl
@@ -218,11 +227,13 @@ function PrivacyPolicy() {
                             Please refer to Razorpay's Privacy Policy for
                             more information about payment processing.
                         </p>
+
                     </section>
 
                     {/* 4 */}
 
                     <section className="mt-10">
+
                         <h2
                             className="
                                 text-xl
@@ -235,12 +246,14 @@ function PrivacyPolicy() {
                         </h2>
 
                         <ul className="mt-4 space-y-3">
+
                             {[
                                 "To issue receipts.",
                                 "For 80G compliance and related requirements.",
                                 "For audit and legal compliance.",
                                 "To send updates about our work. You can opt out at any time.",
                             ].map((item) => (
+
                                 <li
                                     key={item}
                                     className="
@@ -264,13 +277,16 @@ function PrivacyPolicy() {
 
                                     <span>{item}</span>
                                 </li>
+
                             ))}
+
                         </ul>
                     </section>
 
                     {/* 5 */}
 
                     <section className="mt-10">
+
                         <h2
                             className="
                                 text-xl
@@ -296,11 +312,13 @@ function PrivacyPolicy() {
                             foreign funds until we get FCRA approval.
                             This note is also mentioned on the Donate page.
                         </p>
+
                     </section>
 
                     {/* 6 */}
 
                     <section className="mt-10">
+
                         <h2
                             className="
                                 text-xl
@@ -326,11 +344,13 @@ function PrivacyPolicy() {
                             We do not store data in Excel sheets. Access is
                             restricted to 2 trustees only.
                         </p>
+
                     </section>
 
                     {/* 7 */}
 
                     <section className="mt-10">
+
                         <h2
                             className="
                                 text-xl
@@ -352,24 +372,17 @@ function PrivacyPolicy() {
                             "
                         >
                             Under DPDP Act 2023, you can ask for correction
-                            or deletion of your data by writing to us at{" "}
-                            <a
-                                href="mailto:abdullahfoundationmzn@gmail.com"
-                                className="
-                                    font-semibold
-                                    text-primary-700
-                                    hover:text-primary-800
-                                "
-                            >
-                                abdullahfoundationmzn@gmail.com
-                            </a>
-                            . We will reply within 30 days.
+                            or deletion of your data. Please contact Abdullah
+                            Foundation through the official WhatsApp number
+                            listed below. We will reply within 30 days.
                         </p>
+
                     </section>
 
                     {/* 8 */}
 
                     <section className="mt-10">
+
                         <h2
                             className="
                                 flex
@@ -402,11 +415,13 @@ function PrivacyPolicy() {
                             Vercel/Cloudflare and does not use tracking
                             cookies except basic analytics.
                         </p>
+
                     </section>
 
                     {/* 9 */}
 
                     <section className="mt-10">
+
                         <h2
                             className="
                                 text-xl
@@ -428,6 +443,7 @@ function PrivacyPolicy() {
                                 p-5
                             "
                         >
+
                             <p
                                 className="
                                     text-sm
@@ -449,16 +465,7 @@ function PrivacyPolicy() {
                                     text-slate-600
                                 "
                             >
-                                <Mail
-                                    size={16}
-                                    className="
-                                        mt-1
-                                        shrink-0
-                                        text-primary-700
-                                    "
-                                />
-
-                                abdullahfoundationmzn@gmail.com
+                                +91-7088091108
                             </p>
 
                             <p
@@ -495,9 +502,13 @@ function PrivacyPolicy() {
                             >
                                 Mobile / WhatsApp: +91-7088091108
                             </p>
+
                         </div>
+
                     </section>
+
                 </article>
+
             </Container>
         </main>
     );
