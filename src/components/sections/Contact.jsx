@@ -550,6 +550,7 @@ function Contact() {
                                         hover:shadow-[0_15px_35px_rgba(15,23,42,0.06)]
                                     "
                                 >
+
                                     <div
                                         className="
                                             flex
@@ -629,6 +630,7 @@ function Contact() {
                                         hover:shadow-[0_15px_35px_rgba(15,23,42,0.06)]
                                     "
                                 >
+
                                     <div
                                         className="
                                             flex
@@ -825,6 +827,7 @@ function Contact() {
                                     hover:bg-accent-50
                                 "
                             >
+
                                 <div
                                     className="
                                         flex

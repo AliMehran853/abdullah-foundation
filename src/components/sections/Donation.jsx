@@ -91,6 +91,7 @@ function Donation() {
             />
 
             <Container>
+
                 {/* =================================================
                     Section Heading
                 ================================================== */}
@@ -144,6 +145,7 @@ function Donation() {
                                 xl:p-14
                             "
                         >
+
                             {/* Decorative circles */}
 
                             <div
@@ -482,6 +484,7 @@ function Donation() {
                                 xl:p-14
                             "
                         >
+
                             {/* =================================================
                                 Payment Header
                             ================================================== */}
@@ -1195,6 +1198,7 @@ function Donation() {
                         />
                     </a>
                 </div>
+
             </Container>
         </section>
     );

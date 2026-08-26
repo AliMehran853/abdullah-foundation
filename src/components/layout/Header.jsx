@@ -77,24 +77,11 @@ function Header() {
         closeMenu();
         setActiveSection(item.id);
 
-        /*
-            Already on Home:
-            Just smooth-scroll to the section.
-        */
         if (location.pathname === "/") {
             scrollToSection(item.id);
             return;
         }
 
-        /*
-            On a legal page:
-            Navigate to Home with the target hash.
-
-            Example:
-            /privacy-policy
-            →
-            /#gallery
-        */
         navigate(`/#${item.id}`);
     };
 
@@ -163,10 +150,6 @@ function Header() {
         const sectionId =
             location.hash.substring(1);
 
-        /*
-            Wait until Home has rendered,
-            then scroll to the requested section.
-        */
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
                 scrollToSection(sectionId);
@@ -193,9 +176,7 @@ function Header() {
 
                 <div className="flex h-18 items-center justify-between">
 
-                    {/* =================================================
-                        Logo
-                    ================================================== */}
+                    {/* Logo */}
 
                     <Link
                         to="/"
@@ -242,9 +223,7 @@ function Header() {
                         </div>
                     </Link>
 
-                    {/* =================================================
-                        Desktop Navigation
-                    ================================================== */}
+                    {/* Desktop Navigation */}
 
                     <nav
                         aria-label="Main navigation"
@@ -257,8 +236,7 @@ function Header() {
                     >
                         {navigation.map((item) => {
                             const isActive =
-                                activeSection ===
-                                item.id;
+                                activeSection === item.id;
 
                             return (
                                 <Link
@@ -311,12 +289,9 @@ function Header() {
                         })}
                     </nav>
 
-                    {/* =================================================
-                        Desktop Donate
-                    ================================================== */}
+                    {/* Desktop Donate */}
 
                     <div className="hidden lg:block">
-
                         <Button
                             href={WHATSAPP_DONATE_URL}
                             variant="accent"
@@ -324,15 +299,11 @@ function Header() {
                             rel="noopener noreferrer"
                         >
                             <Heart size={17} />
-
                             Donate Now
                         </Button>
-
                     </div>
 
-                    {/* =================================================
-                        Mobile Menu Button
-                    ================================================== */}
+                    {/* Mobile Menu Button */}
 
                     <button
                         type="button"
@@ -346,9 +317,7 @@ function Header() {
                                 ? "Close navigation menu"
                                 : "Open navigation menu"
                         }
-                        aria-expanded={
-                            isMenuOpen
-                        }
+                        aria-expanded={isMenuOpen}
                         className="
                             flex
                             h-10
@@ -377,9 +346,7 @@ function Header() {
                 </div>
             </Container>
 
-            {/* =========================================================
-                Mobile Navigation
-            ========================================================== */}
+            {/* Mobile Navigation */}
 
             <div
                 className={`
@@ -408,11 +375,9 @@ function Header() {
                             py-4
                         "
                     >
-
                         {navigation.map((item) => {
                             const isActive =
-                                activeSection ===
-                                item.id;
+                                activeSection === item.id;
 
                             return (
                                 <Link
@@ -482,12 +447,9 @@ function Header() {
                                 className="w-full"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                onClick={
-                                    closeMenu
-                                }
+                                onClick={closeMenu}
                             >
                                 <Heart size={17} />
-
                                 Donate Now
                             </Button>
                         </div>

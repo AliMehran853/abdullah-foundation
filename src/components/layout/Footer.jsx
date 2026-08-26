@@ -76,9 +76,7 @@ function Footer() {
         event.preventDefault();
 
         const section =
-            document.getElementById(
-                sectionId
-            );
+            document.getElementById(sectionId);
 
         if (!section) return;
 
@@ -101,10 +99,6 @@ function Footer() {
                 text-white
             "
         >
-            {/* =====================================================
-                Decorative Background
-            ====================================================== */}
-
             <div
                 aria-hidden="true"
                 className="
@@ -137,10 +131,6 @@ function Footer() {
 
             <Container>
 
-                {/* =================================================
-                    Main Footer
-                ================================================== */}
-
                 <div
                     className="
                         relative
@@ -148,22 +138,16 @@ function Footer() {
                         grid
                         gap-12
                         py-14
-
                         sm:py-16
-
                         lg:grid-cols-[1.25fr_0.75fr_0.9fr_1fr]
                         lg:gap-12
                         lg:py-20
                     "
                 >
 
-                    {/* =================================================
-                        Foundation
-                    ================================================== */}
+                    {/* Foundation */}
 
                     <div>
-
-                        {/* Logo */}
 
                         <a
                             href="/#home"
@@ -180,7 +164,6 @@ function Footer() {
                                 gap-3
                             "
                         >
-
                             <div
                                 className="
                                     flex
@@ -206,7 +189,6 @@ function Footer() {
                             </div>
 
                             <div>
-
                                 <h2
                                     className="
                                         text-base
@@ -227,12 +209,8 @@ function Footer() {
                                 >
                                     Serving Humanity
                                 </p>
-
                             </div>
-
                         </a>
-
-                        {/* Description */}
 
                         <p
                             className="
@@ -249,8 +227,6 @@ function Footer() {
                             healthcare, skills, and compassionate care.
                         </p>
 
-                        {/* Founder */}
-
                         <p
                             className="
                                 mt-4
@@ -264,8 +240,6 @@ function Footer() {
                                 Shahadat Faridi
                             </span>
                         </p>
-
-                        {/* Mission Quote */}
 
                         <div
                             className="
@@ -282,7 +256,6 @@ function Footer() {
                                 py-4
                             "
                         >
-
                             <Heart
                                 size={18}
                                 className="
@@ -303,17 +276,13 @@ function Footer() {
                                 Free Education, Food & Shelter
                                 for 150+ underprivileged children.
                             </p>
-
                         </div>
 
                     </div>
 
-                    {/* =================================================
-                        Quick Links
-                    ================================================== */}
+                    {/* Quick Links */}
 
                     <div>
-
                         <h3
                             className="
                                 text-sm
@@ -325,10 +294,8 @@ function Footer() {
                         </h3>
 
                         <ul className="mt-5 space-y-3">
-
                             {quickLinks.map((link) => (
                                 <li key={link.label}>
-
                                     <a
                                         href={link.href}
                                         onClick={(event) =>
@@ -349,7 +316,6 @@ function Footer() {
                                             hover:text-white
                                         "
                                     >
-
                                         <span>
                                             {link.label}
                                         </span>
@@ -365,22 +331,15 @@ function Footer() {
                                                 group-hover:opacity-100
                                             "
                                         />
-
                                     </a>
-
                                 </li>
                             ))}
-
                         </ul>
-
                     </div>
 
-                    {/* =================================================
-                        Legal Links
-                    ================================================== */}
+                    {/* Legal Links */}
 
                     <div>
-
                         <h3
                             className="
                                 text-sm
@@ -392,10 +351,8 @@ function Footer() {
                         </h3>
 
                         <ul className="mt-5 space-y-3">
-
                             {legalLinks.map((link) => (
                                 <li key={link.href}>
-
                                     <Link
                                         to={link.href}
                                         className="
@@ -412,7 +369,6 @@ function Footer() {
                                             hover:text-white
                                         "
                                     >
-
                                         <span>
                                             {link.label}
                                         </span>
@@ -430,19 +386,13 @@ function Footer() {
                                                 group-hover:opacity-100
                                             "
                                         />
-
                                     </Link>
-
                                 </li>
                             ))}
-
                         </ul>
-
                     </div>
 
-                    {/* =================================================
-                        Contact + CTA
-                    ================================================== */}
+                    {/* Contact */}
 
                     <div>
 
@@ -458,16 +408,7 @@ function Footer() {
 
                         <div className="mt-5 space-y-4">
 
-                            {/* Main Location */}
-
-                            <div
-                                className="
-                                    flex
-                                    items-start
-                                    gap-3
-                                "
-                            >
-
+                            <div className="flex items-start gap-3">
                                 <MapPin
                                     size={18}
                                     className="
@@ -498,10 +439,7 @@ function Footer() {
 
                                     Uttar Pradesh, India
                                 </p>
-
                             </div>
-
-                            {/* Email */}
 
                             <a
                                 href="mailto:abdullahfoundationmzn@gmail.com"
@@ -512,7 +450,6 @@ function Footer() {
                                     gap-3
                                 "
                             >
-
                                 <Mail
                                     size={18}
                                     className="
@@ -535,10 +472,7 @@ function Footer() {
                                 >
                                     abdullahfoundationmzn@gmail.com
                                 </span>
-
                             </a>
-
-                            {/* WhatsApp / Phone */}
 
                             <a
                                 href={WHATSAPP_DONATE_URL}
@@ -551,7 +485,6 @@ function Footer() {
                                     gap-3
                                 "
                             >
-
                                 <Phone
                                     size={18}
                                     className="
@@ -562,7 +495,6 @@ function Footer() {
                                 />
 
                                 <div>
-
                                     <p
                                         className="
                                             text-sm
@@ -592,21 +524,10 @@ function Footer() {
                                     >
                                         +91 7088091108
                                     </span>
-
                                 </div>
-
                             </a>
 
-                            {/* UPI / GPay / PhonePe */}
-
-                            <div
-                                className="
-                                    flex
-                                    items-start
-                                    gap-3
-                                "
-                            >
-
+                            <div className="flex items-start gap-3">
                                 <Heart
                                     size={18}
                                     className="
@@ -617,7 +538,6 @@ function Footer() {
                                 />
 
                                 <div>
-
                                     <p
                                         className="
                                             text-sm
@@ -644,14 +564,10 @@ function Footer() {
                                     >
                                         {UPI_PHONE}
                                     </span>
-
                                 </div>
-
                             </div>
 
                         </div>
-
-                        {/* Donate */}
 
                         <a
                             href={WHATSAPP_DONATE_URL}
@@ -679,7 +595,6 @@ function Footer() {
                                 hover:shadow-xl
                             "
                         >
-
                             <Heart
                                 size={17}
                                 fill="currentColor"
@@ -696,16 +611,12 @@ function Footer() {
                                     group-hover:translate-x-0.5
                                 "
                             />
-
                         </a>
 
                     </div>
-
                 </div>
 
-                {/* =================================================
-                    Bottom Divider
-                ================================================== */}
+                {/* Bottom Divider */}
 
                 <div
                     className="
@@ -715,7 +626,6 @@ function Footer() {
                         border-slate-800
                     "
                 >
-
                     <div
                         className="
                             flex
@@ -730,7 +640,6 @@ function Footer() {
                             sm:justify-between
                         "
                     >
-
                         <p>
                             © 2026 Abdullah Foundation.
                             All rights reserved.
@@ -753,9 +662,7 @@ function Footer() {
 
                             for humanity.
                         </p>
-
                     </div>
-
                 </div>
 
             </Container>
