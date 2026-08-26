@@ -349,29 +349,22 @@ function Hero() {
                             "
                         />
 
-                        {/* Banner Frame */}
+                        {/* =================================================
+                            Banner Frame
+                        ================================================== */}
 
                         <div
                             className="
                                 relative
                                 z-10
-                                flex
-                                min-h-[420px]
-                                items-center
-                                justify-center
+                                aspect-square
+                                w-full
                                 overflow-hidden
                                 rounded-[2rem]
                                 border
                                 border-slate-200
                                 bg-white
-                                p-2
                                 shadow-[0_25px_70px_rgba(15,23,42,0.14)]
-
-                                sm:min-h-[500px]
-                                sm:p-3
-
-                                lg:min-h-[560px]
-                                lg:p-4
                             "
                         >
                             <img
@@ -379,16 +372,13 @@ function Hero() {
                                 alt="Abdullah Foundation banner"
                                 loading="eager"
                                 className="
+                                    absolute
+                                    inset-0
                                     h-full
-                                    max-h-[560px]
                                     w-full
-                                    rounded-[1.5rem]
+                                    rounded-[2rem]
                                     object-cover
                                     object-center
-
-                                    sm:rounded-[1.75rem]
-
-                                    lg:rounded-[1.75rem]
 
                                     transition-transform
                                     duration-700
