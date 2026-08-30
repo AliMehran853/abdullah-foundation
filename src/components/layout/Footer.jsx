@@ -7,7 +7,12 @@ import {
 } from "lucide-react";
 
 import Container from "../ui/Container";
-import { Link, useLocation } from "react-router-dom";
+
+import {
+    Link,
+    useLocation,
+} from "react-router-dom";
+
 
 const WHATSAPP_DONATE_URL =
     "https://wa.me/917088091108";
@@ -17,8 +22,11 @@ const OFFICIAL_WEBSITE_URL =
 
 const UPI_PHONE = "7088091108";
 
+
 function Footer() {
+
     const location = useLocation();
+
 
     const quickLinks = [
         {
@@ -26,26 +34,43 @@ function Footer() {
             href: "/#home",
             sectionId: "home",
         },
+
         {
             label: "About",
             href: "/#about",
             sectionId: "about",
         },
+
         {
             label: "Our Work",
             href: "/#work",
             sectionId: "work",
         },
+
+        {
+            label: "7 Karyas",
+            href: "/#karyas",
+            sectionId: "karyas",
+        },
+
         {
             label: "Impact",
             href: "/#impact",
             sectionId: "impact",
         },
+
         {
             label: "Gallery",
             href: "/#gallery",
             sectionId: "gallery",
         },
+
+        {
+            label: "Donate",
+            href: "/#donate",
+            sectionId: "donate",
+        },
+
         {
             label: "Contact",
             href: "/#contact",
@@ -53,43 +78,61 @@ function Footer() {
         },
     ];
 
+
     const legalLinks = [
         {
             label: "Privacy Policy",
             href: "/privacy-policy",
         },
+
         {
             label: "Terms of Service",
             href: "/terms-of-service",
         },
+
         {
             label: "Transparency & Accountability",
             href: "/transparency",
         },
+
+        {
+            label: "Authorization Notice",
+            href: "/authorization-notice",
+        },
     ];
+
 
     const handleSectionClick = (
         event,
         sectionId
     ) => {
+
         if (location.pathname !== "/") {
             return;
         }
 
+
         event.preventDefault();
+
 
         const section =
             document.getElementById(sectionId);
 
+
         if (!section) return;
 
+
         requestAnimationFrame(() => {
+
             section.scrollIntoView({
                 behavior: "smooth",
                 block: "start",
             });
+
         });
+
     };
+
 
     return (
         <footer
@@ -102,6 +145,11 @@ function Footer() {
                 text-white
             "
         >
+
+            {/* =================================================
+                Decorative Background
+            ================================================== */}
+
             <div
                 aria-hidden="true"
                 className="
@@ -132,6 +180,7 @@ function Footer() {
                 "
             />
 
+
             <Container>
 
                 <div
@@ -141,14 +190,18 @@ function Footer() {
                         grid
                         gap-12
                         py-14
+
                         sm:py-16
+
                         lg:grid-cols-[1.25fr_0.75fr_0.9fr_1fr]
                         lg:gap-12
                         lg:py-20
                     "
                 >
 
-                    {/* Foundation */}
+                    {/* =================================================
+                        Foundation
+                    ================================================== */}
 
                     <div>
 
@@ -167,6 +220,7 @@ function Footer() {
                                 gap-3
                             "
                         >
+
                             <div
                                 className="
                                     flex
@@ -191,7 +245,9 @@ function Footer() {
                                 AF
                             </div>
 
+
                             <div>
+
                                 <h2
                                     className="
                                         text-base
@@ -203,6 +259,7 @@ function Footer() {
                                     Abdullah Foundation
                                 </h2>
 
+
                                 <p
                                     className="
                                         mt-0.5
@@ -212,8 +269,11 @@ function Footer() {
                                 >
                                     Serving Humanity
                                 </p>
+
                             </div>
+
                         </a>
+
 
                         <p
                             className="
@@ -230,6 +290,7 @@ function Footer() {
                             healthcare, skills, and compassionate care.
                         </p>
 
+
                         <p
                             className="
                                 mt-4
@@ -239,10 +300,12 @@ function Footer() {
                             "
                         >
                             Founded by{" "}
+
                             <span className="text-white">
                                 Shahadat Faridi
                             </span>
                         </p>
+
 
                         <div
                             className="
@@ -259,6 +322,7 @@ function Footer() {
                                 py-4
                             "
                         >
+
                             <Heart
                                 size={18}
                                 className="
@@ -268,6 +332,7 @@ function Footer() {
                                 "
                                 fill="currentColor"
                             />
+
 
                             <p
                                 className="
@@ -279,11 +344,15 @@ function Footer() {
                                 Free Education, Food & Shelter
                                 for 150+ underprivileged children.
                             </p>
+
                         </div>
 
                     </div>
 
-                    {/* Quick Links */}
+
+                    {/* =================================================
+                        Quick Links
+                    ================================================== */}
 
                     <div>
 
@@ -297,9 +366,11 @@ function Footer() {
                             Explore
                         </h3>
 
+
                         <ul className="mt-5 space-y-3">
 
                             {quickLinks.map((link) => (
+
                                 <li key={link.label}>
 
                                     <a
@@ -322,9 +393,11 @@ function Footer() {
                                             hover:text-white
                                         "
                                     >
+
                                         <span>
                                             {link.label}
                                         </span>
+
 
                                         <ArrowUpRight
                                             size={14}
@@ -337,15 +410,21 @@ function Footer() {
                                                 group-hover:opacity-100
                                             "
                                         />
+
                                     </a>
 
                                 </li>
+
                             ))}
 
                         </ul>
+
                     </div>
 
-                    {/* Legal Links */}
+
+                    {/* =================================================
+                        Legal Links
+                    ================================================== */}
 
                     <div>
 
@@ -359,9 +438,11 @@ function Footer() {
                             Legal
                         </h3>
 
+
                         <ul className="mt-5 space-y-3">
 
                             {legalLinks.map((link) => (
+
                                 <li key={link.href}>
 
                                     <Link
@@ -380,9 +461,11 @@ function Footer() {
                                             hover:text-white
                                         "
                                     >
+
                                         <span>
                                             {link.label}
                                         </span>
+
 
                                         <ArrowUpRight
                                             size={14}
@@ -397,15 +480,21 @@ function Footer() {
                                                 group-hover:opacity-100
                                             "
                                         />
+
                                     </Link>
 
                                 </li>
+
                             ))}
 
                         </ul>
+
                     </div>
 
-                    {/* Contact */}
+
+                    {/* =================================================
+                        Contact
+                    ================================================== */}
 
                     <div>
 
@@ -418,6 +507,7 @@ function Footer() {
                         >
                             Get In Touch
                         </h3>
+
 
                         <div className="mt-5 space-y-4">
 
@@ -434,6 +524,7 @@ function Footer() {
                                     gap-3
                                 "
                             >
+
                                 <LinkIcon
                                     size={18}
                                     className="
@@ -443,7 +534,9 @@ function Footer() {
                                     "
                                 />
 
+
                                 <div className="min-w-0">
+
                                     <p
                                         className="
                                             text-sm
@@ -455,6 +548,7 @@ function Footer() {
                                     >
                                         Official Website
                                     </p>
+
 
                                     <span
                                         className="
@@ -471,8 +565,11 @@ function Footer() {
                                     >
                                         sites.google.com/view/abdullah-foundation/home
                                     </span>
+
                                 </div>
+
                             </a>
+
 
                             {/* Main Location */}
 
@@ -487,6 +584,7 @@ function Footer() {
                                     "
                                 />
 
+
                                 <p
                                     className="
                                         text-sm
@@ -494,9 +592,11 @@ function Footer() {
                                         text-slate-400
                                     "
                                 >
+
                                     <span className="font-semibold text-slate-300">
                                         Muzaffarnagar, UP
                                     </span>{" "}
+
                                     <span className="text-slate-500">
                                         (Main Branch)
                                     </span>
@@ -504,12 +604,15 @@ function Footer() {
                                     <br />
 
                                     Tundla, Firozabad
+
                                     <br />
 
                                     Uttar Pradesh, India
+
                                 </p>
 
                             </div>
+
 
                             {/* WhatsApp */}
 
@@ -524,6 +627,7 @@ function Footer() {
                                     gap-3
                                 "
                             >
+
                                 <Phone
                                     size={18}
                                     className="
@@ -532,6 +636,7 @@ function Footer() {
                                         text-accent-500
                                     "
                                 />
+
 
                                 <div>
 
@@ -546,6 +651,7 @@ function Footer() {
                                     >
                                         WhatsApp / Donate
                                     </p>
+
 
                                     <span
                                         className="
@@ -566,9 +672,11 @@ function Footer() {
                                     </span>
 
                                 </div>
+
                             </a>
 
-                            {/* UPI / GPay / PhonePe */}
+
+                            {/* UPI */}
 
                             <div className="flex items-start gap-3">
 
@@ -581,6 +689,7 @@ function Footer() {
                                     "
                                 />
 
+
                                 <div>
 
                                     <p
@@ -591,6 +700,7 @@ function Footer() {
                                     >
                                         UPI / GPay / PhonePe
                                     </p>
+
 
                                     <span
                                         className="
@@ -611,9 +721,11 @@ function Footer() {
                                     </span>
 
                                 </div>
+
                             </div>
 
                         </div>
+
 
                         {/* Donate */}
 
@@ -643,12 +755,14 @@ function Footer() {
                                 hover:shadow-xl
                             "
                         >
+
                             <Heart
                                 size={17}
                                 fill="currentColor"
                             />
 
                             Donate Now
+
 
                             <ArrowUpRight
                                 size={16}
@@ -659,12 +773,17 @@ function Footer() {
                                     group-hover:translate-x-0.5
                                 "
                             />
+
                         </a>
 
                     </div>
+
                 </div>
 
-                {/* Bottom Divider */}
+
+                {/* =================================================
+                    Bottom Divider
+                ================================================== */}
 
                 <div
                     className="
@@ -674,6 +793,7 @@ function Footer() {
                         border-slate-800
                     "
                 >
+
                     <div
                         className="
                             flex
@@ -688,10 +808,12 @@ function Footer() {
                             sm:justify-between
                         "
                     >
+
                         <p>
                             © 2026 Abdullah Foundation.
                             All rights reserved.
                         </p>
+
 
                         <p
                             className="
@@ -710,12 +832,16 @@ function Footer() {
 
                             for humanity.
                         </p>
+
                     </div>
+
                 </div>
 
             </Container>
+
         </footer>
     );
 }
+
 
 export default Footer;

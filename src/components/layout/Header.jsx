@@ -77,11 +77,13 @@ function Header() {
         closeMenu();
         setActiveSection(item.id);
 
+        /* Already on Home */
         if (location.pathname === "/") {
             scrollToSection(item.id);
             return;
         }
 
+        /* Coming from another page */
         navigate(`/#${item.id}`);
     };
 
@@ -299,6 +301,7 @@ function Header() {
                             rel="noopener noreferrer"
                         >
                             <Heart size={17} />
+
                             Donate Now
                         </Button>
                     </div>
@@ -360,7 +363,7 @@ function Header() {
 
                     ${
                         isMenuOpen
-                            ? "max-h-[500px] opacity-100"
+                            ? "max-h-[700px] opacity-100"
                             : "max-h-0 opacity-0"
                     }
                 `}
@@ -450,6 +453,7 @@ function Header() {
                                 onClick={closeMenu}
                             >
                                 <Heart size={17} />
+
                                 Donate Now
                             </Button>
                         </div>

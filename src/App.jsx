@@ -12,6 +12,7 @@ import Footer from "./components/layout/Footer";
 import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
 import OurWork from "./components/sections/OurWork";
+import Karyas from "./components/sections/Karyas";
 import Impact from "./components/sections/Impact";
 import Gallery from "./components/sections/Gallery";
 import Donation from "./components/sections/Donation";
@@ -20,6 +21,8 @@ import Contact from "./components/sections/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Transparency from "./pages/Transparency";
+import AuthorizationNotice from "./pages/AuthorizationNotice";
+
 
 function Home() {
     return (
@@ -30,6 +33,7 @@ function Home() {
                 <Hero />
                 <About />
                 <OurWork />
+                <Karyas />
                 <Impact />
                 <Gallery />
                 <Donation />
@@ -40,6 +44,7 @@ function Home() {
         </>
     );
 }
+
 
 function LegalLayout({ children }) {
     return (
@@ -55,16 +60,28 @@ function LegalLayout({ children }) {
     );
 }
 
+
 function App() {
     return (
         <BrowserRouter>
+
             <ScrollToTop />
 
             <Routes>
+
+                {/* =================================================
+                    Home
+                ================================================== */}
+
                 <Route
                     path="/"
                     element={<Home />}
                 />
+
+
+                {/* =================================================
+                    Privacy Policy
+                ================================================== */}
 
                 <Route
                     path="/privacy-policy"
@@ -75,6 +92,11 @@ function App() {
                     }
                 />
 
+
+                {/* =================================================
+                    Terms of Service
+                ================================================== */}
+
                 <Route
                     path="/terms-of-service"
                     element={
@@ -83,6 +105,11 @@ function App() {
                         </LegalLayout>
                     }
                 />
+
+
+                {/* =================================================
+                    Transparency
+                ================================================== */}
 
                 <Route
                     path="/transparency"
@@ -93,13 +120,35 @@ function App() {
                     }
                 />
 
+
+                {/* =================================================
+                    Authorization Notice
+                ================================================== */}
+
+                <Route
+                    path="/authorization-notice"
+                    element={
+                        <LegalLayout>
+                            <AuthorizationNotice />
+                        </LegalLayout>
+                    }
+                />
+
+
+                {/* =================================================
+                    Fallback
+                ================================================== */}
+
                 <Route
                     path="*"
                     element={<Home />}
                 />
+
             </Routes>
+
         </BrowserRouter>
     );
 }
+
 
 export default App;

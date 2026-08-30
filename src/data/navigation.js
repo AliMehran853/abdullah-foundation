@@ -18,6 +18,12 @@ export const navigation = [
     },
 
     {
+        id: "karyas",
+        label: "7 Karyas",
+        href: "#karyas",
+    },
+
+    {
         id: "impact",
         label: "Impact",
         href: "#impact",
