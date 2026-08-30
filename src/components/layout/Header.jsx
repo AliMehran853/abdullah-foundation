@@ -22,7 +22,7 @@ import { navigation } from "../../data/navigation";
 import logo from "../../assets/logo/abdullah-foundation-logo.png";
 
 const WHATSAPP_DONATE_URL =
-    "https://wa.me/917088091108";
+    "https://wa.me/917088091108?text=Assalamu%20Alaikum%20Bhai%2C%20Main%20Abdullah%20Foundation%20me%20donate%20karna%20chahta%20hu";
 
 function Header() {
     const location = useLocation();
@@ -78,12 +78,14 @@ function Header() {
         setActiveSection(item.id);
 
         /* Already on Home */
+
         if (location.pathname === "/") {
             scrollToSection(item.id);
             return;
         }
 
         /* Coming from another page */
+
         navigate(`/#${item.id}`);
     };
 
@@ -301,7 +303,6 @@ function Header() {
                             rel="noopener noreferrer"
                         >
                             <Heart size={17} />
-
                             Donate Now
                         </Button>
                     </div>
@@ -453,7 +454,6 @@ function Header() {
                                 onClick={closeMenu}
                             >
                                 <Heart size={17} />
-
                                 Donate Now
                             </Button>
                         </div>

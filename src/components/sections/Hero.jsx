@@ -12,7 +12,7 @@ import Button from "../ui/Button";
 import heroImage from "../../assets/images/hero.webp";
 
 const WHATSAPP_DONATE_URL =
-    "https://wa.me/917088091108";
+    "https://wa.me/917088091108?text=Assalamu%20Alaikum%20Bhai%2C%20Main%20Abdullah%20Foundation%20me%20donate%20karna%20chahta%20hu";
 
 function Hero() {
     return (
@@ -24,17 +24,13 @@ function Hero() {
                 bg-white
                 pt-12
                 pb-20
-
                 sm:pt-16
                 sm:pb-24
-
                 lg:pt-20
                 lg:pb-28
             "
         >
-            {/* =====================================================
-                Decorative Background Elements
-            ====================================================== */}
+            {/* Decorative Background Elements */}
 
             <div
                 aria-hidden="true"
@@ -69,20 +65,19 @@ function Hero() {
             />
 
             <Container>
+
                 <div
                     className="
                         relative
                         grid
                         items-center
                         gap-12
-
                         lg:grid-cols-2
                         lg:gap-16
                     "
                 >
-                    {/* =================================================
-                        Hero Content
-                    ================================================== */}
+
+                    {/* Hero Content */}
 
                     <div className="relative z-10 max-w-2xl">
 
@@ -122,9 +117,7 @@ function Hero() {
                                 leading-[1.08]
                                 tracking-tight
                                 text-dark-900
-
                                 sm:text-5xl
-
                                 lg:text-6xl
                                 xl:text-7xl
                             "
@@ -150,7 +143,6 @@ function Hero() {
                                 text-base
                                 leading-8
                                 text-slate-600
-
                                 sm:text-lg
                             "
                         >
@@ -168,7 +160,6 @@ function Hero() {
                                 flex
                                 flex-col
                                 gap-3
-
                                 sm:flex-row
                             "
                         >
@@ -257,7 +248,6 @@ function Hero() {
                                     h-8
                                     w-px
                                     bg-slate-200
-
                                     sm:block
                                 "
                             />
@@ -304,13 +294,9 @@ function Hero() {
                         </div>
                     </div>
 
-                    {/* =================================================
-                        Hero Image / Banner
-                    ================================================== */}
+                    {/* Hero Image / Banner */}
 
                     <div className="relative">
-
-                        {/* Decorative Shape */}
 
                         <div
                             aria-hidden="true"
@@ -322,7 +308,6 @@ function Hero() {
                                 w-24
                                 rounded-3xl
                                 bg-accent-500/10
-
                                 sm:-right-5
                                 sm:-top-5
                                 sm:h-32
@@ -341,17 +326,12 @@ function Hero() {
                                 rounded-full
                                 bg-primary-500/10
                                 blur-2xl
-
                                 sm:-bottom-7
                                 sm:-left-7
                                 sm:h-40
                                 sm:w-40
                             "
                         />
-
-                        {/* =================================================
-                            Banner Frame
-                        ================================================== */}
 
                         <div
                             className="
@@ -379,19 +359,15 @@ function Hero() {
                                     rounded-[2rem]
                                     object-cover
                                     object-center
-
                                     transition-transform
                                     duration-700
                                     ease-out
-
                                     hover:scale-[1.01]
                                 "
                             />
                         </div>
 
-                        {/* =================================================
-                            Floating Impact Card
-                        ================================================== */}
+                        {/* Floating Impact Card */}
 
                         <div
                             className="
@@ -409,12 +385,9 @@ function Hero() {
                                 px-4
                                 py-3
                                 shadow-[0_15px_40px_rgba(15,23,42,0.14)]
-
                                 transition-transform
                                 duration-300
-
                                 hover:-translate-y-1
-
                                 sm:-bottom-6
                                 sm:left-6
                                 sm:px-5
@@ -462,8 +435,10 @@ function Hero() {
                                 </p>
                             </div>
                         </div>
+
                     </div>
                 </div>
+
             </Container>
         </section>
     );

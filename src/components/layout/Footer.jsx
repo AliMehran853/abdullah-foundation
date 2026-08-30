@@ -13,20 +13,16 @@ import {
     useLocation,
 } from "react-router-dom";
 
-
 const WHATSAPP_DONATE_URL =
-    "https://wa.me/917088091108";
+    "https://wa.me/917088091108?text=Assalamu%20Alaikum%20Bhai%2C%20Main%20Abdullah%20Foundation%20me%20donate%20karna%20chahta%20hu";
 
 const OFFICIAL_WEBSITE_URL =
     "https://sites.google.com/view/abdullah-foundation/home";
 
 const UPI_PHONE = "7088091108";
 
-
 function Footer() {
-
     const location = useLocation();
-
 
     const quickLinks = [
         {
@@ -78,7 +74,6 @@ function Footer() {
         },
     ];
 
-
     const legalLinks = [
         {
             label: "Privacy Policy",
@@ -101,38 +96,28 @@ function Footer() {
         },
     ];
 
-
     const handleSectionClick = (
         event,
         sectionId
     ) => {
-
         if (location.pathname !== "/") {
             return;
         }
 
-
         event.preventDefault();
-
 
         const section =
             document.getElementById(sectionId);
 
-
         if (!section) return;
 
-
         requestAnimationFrame(() => {
-
             section.scrollIntoView({
                 behavior: "smooth",
                 block: "start",
             });
-
         });
-
     };
-
 
     return (
         <footer
@@ -179,7 +164,6 @@ function Footer() {
                     blur-3xl
                 "
             />
-
 
             <Container>
 
@@ -245,7 +229,6 @@ function Footer() {
                                 AF
                             </div>
 
-
                             <div>
 
                                 <h2
@@ -258,7 +241,6 @@ function Footer() {
                                 >
                                     Abdullah Foundation
                                 </h2>
-
 
                                 <p
                                     className="
@@ -273,7 +255,6 @@ function Footer() {
                             </div>
 
                         </a>
-
 
                         <p
                             className="
@@ -290,7 +271,6 @@ function Footer() {
                             healthcare, skills, and compassionate care.
                         </p>
 
-
                         <p
                             className="
                                 mt-4
@@ -305,7 +285,6 @@ function Footer() {
                                 Shahadat Faridi
                             </span>
                         </p>
-
 
                         <div
                             className="
@@ -333,7 +312,6 @@ function Footer() {
                                 fill="currentColor"
                             />
 
-
                             <p
                                 className="
                                     text-xs
@@ -348,7 +326,6 @@ function Footer() {
                         </div>
 
                     </div>
-
 
                     {/* =================================================
                         Quick Links
@@ -365,7 +342,6 @@ function Footer() {
                         >
                             Explore
                         </h3>
-
 
                         <ul className="mt-5 space-y-3">
 
@@ -398,7 +374,6 @@ function Footer() {
                                             {link.label}
                                         </span>
 
-
                                         <ArrowUpRight
                                             size={14}
                                             className="
@@ -421,7 +396,6 @@ function Footer() {
 
                     </div>
 
-
                     {/* =================================================
                         Legal Links
                     ================================================== */}
@@ -437,7 +411,6 @@ function Footer() {
                         >
                             Legal
                         </h3>
-
 
                         <ul className="mt-5 space-y-3">
 
@@ -466,7 +439,6 @@ function Footer() {
                                             {link.label}
                                         </span>
 
-
                                         <ArrowUpRight
                                             size={14}
                                             className="
@@ -491,7 +463,6 @@ function Footer() {
 
                     </div>
 
-
                     {/* =================================================
                         Contact
                     ================================================== */}
@@ -507,7 +478,6 @@ function Footer() {
                         >
                             Get In Touch
                         </h3>
-
 
                         <div className="mt-5 space-y-4">
 
@@ -534,7 +504,6 @@ function Footer() {
                                     "
                                 />
 
-
                                 <div className="min-w-0">
 
                                     <p
@@ -548,7 +517,6 @@ function Footer() {
                                     >
                                         Official Website
                                     </p>
-
 
                                     <span
                                         className="
@@ -570,7 +538,6 @@ function Footer() {
 
                             </a>
 
-
                             {/* Main Location */}
 
                             <div className="flex items-start gap-3">
@@ -584,7 +551,6 @@ function Footer() {
                                     "
                                 />
 
-
                                 <p
                                     className="
                                         text-sm
@@ -592,7 +558,6 @@ function Footer() {
                                         text-slate-400
                                     "
                                 >
-
                                     <span className="font-semibold text-slate-300">
                                         Muzaffarnagar, UP
                                     </span>{" "}
@@ -608,11 +573,9 @@ function Footer() {
                                     <br />
 
                                     Uttar Pradesh, India
-
                                 </p>
 
                             </div>
-
 
                             {/* WhatsApp */}
 
@@ -637,7 +600,6 @@ function Footer() {
                                     "
                                 />
 
-
                                 <div>
 
                                     <p
@@ -651,7 +613,6 @@ function Footer() {
                                     >
                                         WhatsApp / Donate
                                     </p>
-
 
                                     <span
                                         className="
@@ -675,7 +636,6 @@ function Footer() {
 
                             </a>
 
-
                             {/* UPI */}
 
                             <div className="flex items-start gap-3">
@@ -689,7 +649,6 @@ function Footer() {
                                     "
                                 />
 
-
                                 <div>
 
                                     <p
@@ -700,7 +659,6 @@ function Footer() {
                                     >
                                         UPI / GPay / PhonePe
                                     </p>
-
 
                                     <span
                                         className="
@@ -725,7 +683,6 @@ function Footer() {
                             </div>
 
                         </div>
-
 
                         {/* Donate */}
 
@@ -763,7 +720,6 @@ function Footer() {
 
                             Donate Now
 
-
                             <ArrowUpRight
                                 size={16}
                                 className="
@@ -779,7 +735,6 @@ function Footer() {
                     </div>
 
                 </div>
-
 
                 {/* =================================================
                     Bottom Divider
@@ -814,7 +769,6 @@ function Footer() {
                             All rights reserved.
                         </p>
 
-
                         <p
                             className="
                                 flex
@@ -842,6 +796,5 @@ function Footer() {
         </footer>
     );
 }
-
 
 export default Footer;

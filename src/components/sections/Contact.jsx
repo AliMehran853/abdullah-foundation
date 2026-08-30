@@ -10,9 +10,10 @@ import Container from "../ui/Container";
 import SectionTitle from "../ui/SectionTitle";
 
 const WHATSAPP_URL =
-    "https://wa.me/917088091108";
+    "https://wa.me/917088091108?text=Assalamu%20Alaikum%20Bhai%2C%20Main%20Abdullah%20Foundation%20me%20donate%20karna%20chahta%20hu";
 
-const PHONE_NUMBER = "+91 7088091108";
+const PHONE_NUMBER =
+    "+91 7088091108";
 
 function Contact() {
     return (
@@ -28,9 +29,8 @@ function Contact() {
                 lg:py-28
             "
         >
-            {/* =====================================================
-                Decorative Background
-            ====================================================== */}
+
+            {/* Decorative Background */}
 
             <div
                 aria-hidden="true"
@@ -66,9 +66,7 @@ function Contact() {
 
             <Container>
 
-                {/* =================================================
-                    Section Heading
-                ================================================== */}
+                {/* Section Heading */}
 
                 <SectionTitle
                     eyebrow="Contact Abdullah Foundation"
@@ -76,9 +74,7 @@ function Contact() {
                     description="Whether you want to support the foundation, ask about our work, or learn how to help, reach out to us directly."
                 />
 
-                {/* =================================================
-                    Main Contact Card
-                ================================================== */}
+                {/* Main Contact Card */}
 
                 <div
                     className="
@@ -95,11 +91,10 @@ function Contact() {
                         shadow-[0_25px_70px_rgba(15,23,42,0.08)]
                     "
                 >
+
                     <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
 
-                        {/* =================================================
-                            LEFT SIDE
-                        ================================================== */}
+                        {/* LEFT SIDE */}
 
                         <div
                             className="
@@ -108,7 +103,9 @@ function Contact() {
                                 bg-primary-700
                                 p-7
                                 text-white
+
                                 sm:p-10
+
                                 lg:p-12
                             "
                         >
@@ -207,9 +204,7 @@ function Contact() {
                                     mission, or discuss how you can help.
                                 </p>
 
-                                {/* =================================================
-                                    Contact Details
-                                ================================================== */}
+                                {/* Contact Details */}
 
                                 <div className="mt-9 space-y-6">
 
@@ -339,7 +334,6 @@ function Contact() {
                                         </div>
 
                                         <div>
-
                                             <p
                                                 className="
                                                     text-xs
@@ -362,15 +356,12 @@ function Contact() {
                                             >
                                                 {PHONE_NUMBER}
                                             </p>
-
                                         </div>
                                     </a>
 
                                 </div>
 
-                                {/* =================================================
-                                    WhatsApp CTA
-                                ================================================== */}
+                                {/* WhatsApp CTA */}
 
                                 <a
                                     href={WHATSAPP_URL}
@@ -414,9 +405,7 @@ function Contact() {
                             </div>
                         </div>
 
-                        {/* =================================================
-                            RIGHT SIDE
-                        ================================================== */}
+                        {/* RIGHT SIDE */}
 
                         <div className="bg-white p-7 sm:p-10 lg:p-12">
 
@@ -441,6 +430,7 @@ function Contact() {
                                         font-bold
                                         leading-tight
                                         text-dark-900
+
                                         sm:text-3xl
                                     "
                                 >
@@ -454,6 +444,7 @@ function Contact() {
                                         text-sm
                                         leading-7
                                         text-slate-500
+
                                         sm:text-base
                                     "
                                 >
@@ -464,9 +455,7 @@ function Contact() {
 
                             </div>
 
-                            {/* =================================================
-                                Contact Actions
-                            ================================================== */}
+                            {/* Contact Actions */}
 
                             <div className="mt-8 grid gap-4 sm:grid-cols-2">
 
@@ -546,14 +535,11 @@ function Contact() {
                                     >
                                         {PHONE_NUMBER}
                                     </p>
-
                                 </a>
 
                             </div>
 
-                            {/* =================================================
-                                Location Card
-                            ================================================== */}
+                            {/* Location Card */}
 
                             <div
                                 className="
@@ -662,9 +648,7 @@ function Contact() {
                                 </div>
                             </div>
 
-                            {/* =================================================
-                                WhatsApp Contact Banner
-                            ================================================== */}
+                            {/* WhatsApp Contact Banner */}
 
                             <a
                                 href={WHATSAPP_URL}
@@ -743,15 +727,14 @@ function Contact() {
                                         group-hover:translate-x-0.5
                                     "
                                 />
+
                             </a>
 
                         </div>
                     </div>
                 </div>
 
-                {/* =================================================
-                    Bottom Message
-                ================================================== */}
+                {/* Bottom Message */}
 
                 <div
                     className="
