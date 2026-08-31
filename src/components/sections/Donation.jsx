@@ -119,6 +119,10 @@ function Donation() {
                 >
                     <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
 
+                        {/* =================================================
+                            LEFT SIDE
+                        ================================================== */}
+
                         <div
                             className="
                                 relative
@@ -437,6 +441,10 @@ function Donation() {
                             </div>
                         </div>
 
+                        {/* =================================================
+                            RIGHT SIDE
+                        ================================================== */}
+
                         <div
                             className="
                                 bg-slate-50
@@ -517,6 +525,8 @@ function Donation() {
                                 </p>
 
                             </div>
+
+                            {/* WhatsApp Donation */}
 
                             <a
                                 href={WHATSAPP_DONATE_URL}
@@ -644,6 +654,8 @@ function Donation() {
                                     </p>
                                 </div>
                             </a>
+
+                            {/* UPI Details */}
 
                             <div
                                 className="
@@ -901,6 +913,8 @@ function Donation() {
                                     before sending money.
                                 </p>
                             </div>
+
+                            {/* UPI QR */}
 
                             <div
                                 className="
