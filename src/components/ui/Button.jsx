@@ -89,13 +89,18 @@ function Button({
     `;
 
     if (href) {
+        const linkRel =
+            target === "_blank" && !rel
+                ? "noopener noreferrer"
+                : rel;
+
         return (
             <a
                 href={href}
                 className={styles}
                 onClick={onClick}
                 target={target}
-                rel={rel}
+                rel={linkRel}
                 aria-label={ariaLabel}
                 aria-disabled={disabled}
             >

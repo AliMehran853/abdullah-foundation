@@ -1,6 +1,5 @@
 import {
     ArrowUpRight,
-    Mail,
     MapPin,
     MessageCircle,
     Phone,
@@ -10,7 +9,7 @@ import Container from "../ui/Container";
 import SectionTitle from "../ui/SectionTitle";
 
 const WHATSAPP_URL =
-    "https://wa.me/917088091108?text=Assalamu%20Alaikum%20Bhai%2C%20Main%20Abdullah%20Foundation%20me%20donate%20karna%20chahta%20hu";
+    "https://wa.me/917088091108";
 
 const PHONE_NUMBER =
     "+91 7088091108";

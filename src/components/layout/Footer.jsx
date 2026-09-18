@@ -14,7 +14,7 @@ import {
 } from "react-router-dom";
 
 const WHATSAPP_DONATE_URL =
-    "https://wa.me/917088091108?text=Assalamu%20Alaikum%20Bhai%2C%20Main%20Abdullah%20Foundation%20me%20donate%20karna%20chahta%20hu";
+    "https://wa.me/917088091108";
 
 const OFFICIAL_WEBSITE_URL =
     "https://sites.google.com/view/abdullah-foundation/home";
@@ -71,6 +71,12 @@ function Footer() {
             label: "Contact",
             href: "/#contact",
             sectionId: "contact",
+        },
+
+        {
+            label: "AI Tools",
+            href: "https://codepen.io/Faridi-2026/pen/emvBxbP",
+            external: true,
         },
     ];
 
@@ -351,12 +357,24 @@ function Footer() {
 
                                     <a
                                         href={link.href}
-                                        onClick={(event) =>
-                                            handleSectionClick(
-                                                event,
-                                                link.sectionId
-                                            )
+                                        target={
+                                            link.external
+                                                ? "_blank"
+                                                : undefined
                                         }
+                                        rel={
+                                            link.external
+                                                ? "noopener noreferrer"
+                                                : undefined
+                                        }
+                                        onClick={(event) => {
+                                            if (!link.external) {
+                                                handleSectionClick(
+                                                    event,
+                                                    link.sectionId
+                                                );
+                                            }
+                                        }}
                                         className="
                                             group
                                             inline-flex

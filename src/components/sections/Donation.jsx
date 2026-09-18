@@ -16,7 +16,7 @@ import SectionTitle from "../ui/SectionTitle";
 import upiQrImage from "../../assets/donation/abdullah-foundation-upi-qr.png";
 
 const WHATSAPP_DONATE_URL =
-    "https://wa.me/917088091108?text=Assalamu%20Alaikum%20Bhai%2C%20Main%20Abdullah%20Foundation%20me%20donate%20karna%20chahta%20hu";
+    "https://wa.me/917088091108";
 
 const UPI_PHONE = "7088091108";
 
